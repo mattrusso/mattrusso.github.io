@@ -1,0 +1,26 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russomatt/sfdata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/russomatt/sfdata/issues"
+  },
+  "homepage": "https://github.com/russomatt/sfdata#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "css-loader": "^0.28.3",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1"
+  }
+}

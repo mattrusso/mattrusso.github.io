@@ -1,0 +1,783 @@
+Neighborhoods_Analysis_Boundaries,File_Year,Count_of_Eviction_Notices
+Bernal Heights,01/01/2005 12:00:00 AM,47
+Haight Ashbury,01/01/1999 12:00:00 AM,101
+Seacliff,01/01/2015 12:00:00 AM,2
+Lincoln Park,01/01/1998 12:00:00 AM,1
+Lincoln Park,01/01/2002 12:00:00 AM,1
+Japantown,01/01/2001 12:00:00 AM,4
+Hayes Valley,01/01/2000 12:00:00 AM,135
+Presidio Heights,01/01/2005 12:00:00 AM,27
+Potrero Hill,01/01/2009 12:00:00 AM,14
+Outer Richmond,01/01/2002 12:00:00 AM,81
+Outer Richmond,01/01/1998 12:00:00 AM,152
+Outer Mission,01/01/2006 12:00:00 AM,20
+Pacific Heights,01/01/2012 12:00:00 AM,38
+Excelsior,01/01/2017 12:00:00 AM,6
+Japantown,01/01/2000 12:00:00 AM,5
+Presidio Heights,01/01/2004 12:00:00 AM,20
+Castro/Upper Market,01/01/1998 12:00:00 AM,145
+Castro/Upper Market,01/01/2002 12:00:00 AM,89
+Hayes Valley,01/01/2001 12:00:00 AM,91
+Bernal Heights,01/01/2004 12:00:00 AM,45
+Chinatown,01/01/2009 12:00:00 AM,13
+Western Addition,01/01/2013 12:00:00 AM,32
+Portola,01/01/2007 12:00:00 AM,14
+,01/01/2001 12:00:00 AM,127
+North Beach,01/01/2009 12:00:00 AM,17
+Lone Mountain/USF,01/01/1997 12:00:00 AM,94
+Inner Sunset,01/01/1997 12:00:00 AM,73
+Bayview Hunters Point,01/01/2013 12:00:00 AM,49
+Marina,01/01/2005 12:00:00 AM,29
+Presidio,01/01/2008 12:00:00 AM,1
+Visitacion Valley,01/01/2000 12:00:00 AM,41
+Twin Peaks,01/01/2008 12:00:00 AM,22
+Glen Park,01/01/2009 12:00:00 AM,5
+West of Twin Peaks,01/01/2007 12:00:00 AM,13
+Financial District/South Beach,01/01/2004 12:00:00 AM,7
+Tenderloin,01/01/1999 12:00:00 AM,78
+Inner Richmond,01/01/1998 12:00:00 AM,70
+Inner Richmond,01/01/2002 12:00:00 AM,58
+Russian Hill,01/01/2006 12:00:00 AM,40
+Pacific Heights,01/01/2015 12:00:00 AM,57
+Mission,01/01/2007 12:00:00 AM,161
+Visitacion Valley,01/01/2001 12:00:00 AM,41
+Financial District/South Beach,01/01/2005 12:00:00 AM,9
+Noe Valley,01/01/2013 12:00:00 AM,36
+Lakeshore,01/01/2007 12:00:00 AM,11
+,01/01/2000 12:00:00 AM,121
+Marina,01/01/2004 12:00:00 AM,75
+South of Market,01/01/1997 12:00:00 AM,37
+Nob Hill,01/01/2004 12:00:00 AM,61
+Pacific Heights,01/01/2008 12:00:00 AM,35
+Outer Mission,01/01/2003 12:00:00 AM,21
+Glen Park,01/01/2001 12:00:00 AM,11
+Lincoln Park,01/01/2007 12:00:00 AM,2
+Haight Ashbury,01/01/1997 12:00:00 AM,114
+Noe Valley,01/01/2016 12:00:00 AM,41
+,01/01/2009 12:00:00 AM,31
+North Beach,01/01/2001 12:00:00 AM,50
+Oceanview/Merced/Ingleside,01/01/2004 12:00:00 AM,29
+Oceanview/Merced/Ingleside,01/01/2005 12:00:00 AM,33
+Outer Mission,01/01/2010 12:00:00 AM,11
+North Beach,01/01/2000 12:00:00 AM,57
+Nob Hill,01/01/2005 12:00:00 AM,70
+Western Addition,01/01/2016 12:00:00 AM,36
+Castro/Upper Market,01/01/2007 12:00:00 AM,46
+Twin Peaks,01/01/2015 12:00:00 AM,21
+Bayview Hunters Point,01/01/2016 12:00:00 AM,81
+Russian Hill,01/01/2011 12:00:00 AM,36
+Visitacion Valley,01/01/2009 12:00:00 AM,9
+Glen Park,01/01/2000 12:00:00 AM,20
+Outer Richmond,01/01/2007 12:00:00 AM,63
+Russian Hill,01/01/2003 12:00:00 AM,13
+Japantown,01/01/2009 12:00:00 AM,3
+Potrero Hill,01/01/2000 12:00:00 AM,52
+Lone Mountain/USF,01/01/1999 12:00:00 AM,58
+Inner Sunset,01/01/1999 12:00:00 AM,77
+West of Twin Peaks,01/01/2002 12:00:00 AM,39
+West of Twin Peaks,01/01/1998 12:00:00 AM,64
+Chinatown,01/01/2000 12:00:00 AM,23
+Sunset/Parkside,01/01/2004 12:00:00 AM,64
+Portola,01/01/2002 12:00:00 AM,12
+Portola,01/01/1998 12:00:00 AM,68
+Tenderloin,01/01/1997 12:00:00 AM,57
+Lakeshore,01/01/1998 12:00:00 AM,81
+Lakeshore,01/01/2002 12:00:00 AM,2
+Excelsior,01/01/2014 12:00:00 AM,68
+Sunset/Parkside,01/01/2005 12:00:00 AM,71
+Russian Hill,01/01/2010 12:00:00 AM,8
+Chinatown,01/01/2001 12:00:00 AM,26
+Seacliff,01/01/2008 12:00:00 AM,1
+Mission,01/01/1998 12:00:00 AM,341
+Mission,01/01/2002 12:00:00 AM,177
+Potrero Hill,01/01/2001 12:00:00 AM,28
+Twin Peaks,01/01/2012 12:00:00 AM,15
+Inner Richmond,01/01/2007 12:00:00 AM,50
+Outer Mission,01/01/2011 12:00:00 AM,29
+South of Market,01/01/1999 12:00:00 AM,59
+Hayes Valley,01/01/2009 12:00:00 AM,46
+Haight Ashbury,01/01/2001 12:00:00 AM,55
+Sunset/Parkside,01/01/2013 12:00:00 AM,107
+Presidio Heights,01/01/2016 12:00:00 AM,9
+Seacliff,01/01/2003 12:00:00 AM,1
+Glen Park,01/01/1997 12:00:00 AM,14
+Inner Sunset,01/01/2009 12:00:00 AM,62
+Twin Peaks,01/01/2006 12:00:00 AM,6
+Lone Mountain/USF,01/01/2009 12:00:00 AM,11
+Bernal Heights,01/01/2016 12:00:00 AM,65
+Pacific Heights,01/01/2011 12:00:00 AM,35
+North Beach,01/01/1997 12:00:00 AM,42
+Japantown,01/01/1999 12:00:00 AM,4
+Russian Hill,01/01/2008 12:00:00 AM,29
+Hayes Valley,01/01/1999 12:00:00 AM,102
+South of Market,01/01/2009 12:00:00 AM,42
+Excelsior,01/01/2007 12:00:00 AM,52
+McLaren Park,01/01/2010 12:00:00 AM,1
+Haight Ashbury,01/01/2000 12:00:00 AM,100
+Inner Richmond,01/01/2014 12:00:00 AM,42
+Oceanview/Merced/Ingleside,01/01/2013 12:00:00 AM,40
+Portola,01/01/2017 12:00:00 AM,2
+,01/01/1999 12:00:00 AM,248
+Lincoln Park,01/01/2014 12:00:00 AM,2
+Pacific Heights,01/01/2010 12:00:00 AM,23
+Nob Hill,01/01/2013 12:00:00 AM,96
+Tenderloin,01/01/2001 12:00:00 AM,74
+West of Twin Peaks,01/01/2017 12:00:00 AM,3
+Marina,01/01/2016 12:00:00 AM,62
+Pacific Heights,01/01/2003 12:00:00 AM,33
+Visitacion Valley,01/01/1999 12:00:00 AM,17
+Mission,01/01/2017 12:00:00 AM,20
+Outer Mission,01/01/2008 12:00:00 AM,13
+Chinatown,01/01/1997 12:00:00 AM,12
+Tenderloin,01/01/2000 12:00:00 AM,85
+Castro/Upper Market,01/01/2014 12:00:00 AM,103
+Lakeshore,01/01/2017 12:00:00 AM,19
+Seacliff,01/01/2011 12:00:00 AM,4
+Outer Richmond,01/01/2014 12:00:00 AM,117
+Potrero Hill,01/01/1997 12:00:00 AM,49
+McLaren Park,01/01/2011 12:00:00 AM,1
+Financial District/South Beach,01/01/2016 12:00:00 AM,8
+Outer Mission,01/01/2015 12:00:00 AM,51
+Tenderloin,01/01/2009 12:00:00 AM,111
+Treasure Island,01/01/2004 12:00:00 AM,18
+Portola,01/01/2014 12:00:00 AM,31
+Russian Hill,01/01/2012 12:00:00 AM,59
+Financial District/South Beach,01/01/2013 12:00:00 AM,14
+Glen Park,01/01/1999 12:00:00 AM,28
+Western Addition,01/01/2004 12:00:00 AM,25
+West of Twin Peaks,01/01/2014 12:00:00 AM,29
+Noe Valley,01/01/2005 12:00:00 AM,42
+North Beach,01/01/1999 12:00:00 AM,77
+Twin Peaks,01/01/2010 12:00:00 AM,18
+Bayview Hunters Point,01/01/2004 12:00:00 AM,30
+Japantown,01/01/1997 12:00:00 AM,7
+Nob Hill,01/01/2016 12:00:00 AM,67
+Western Addition,01/01/2005 12:00:00 AM,21
+Hayes Valley,01/01/1997 12:00:00 AM,103
+Noe Valley,01/01/2004 12:00:00 AM,48
+Bayview Hunters Point,01/01/2005 12:00:00 AM,24
+Marina,01/01/2013 12:00:00 AM,67
+Mission,01/01/2014 12:00:00 AM,200
+Seacliff,01/01/2006 12:00:00 AM,3
+Treasure Island,01/01/2005 12:00:00 AM,2
+Twin Peaks,01/01/2003 12:00:00 AM,16
+Oceanview/Merced/Ingleside,01/01/2016 12:00:00 AM,38
+Outer Richmond,01/01/2017 12:00:00 AM,15
+Lakeshore,01/01/2014 12:00:00 AM,85
+Excelsior,01/01/1998 12:00:00 AM,76
+Excelsior,01/01/2002 12:00:00 AM,47
+Castro/Upper Market,01/01/2017 12:00:00 AM,6
+Lone Mountain/USF,01/01/2001 12:00:00 AM,51
+Golden Gate Park,01/01/2013 12:00:00 AM,1
+Inner Sunset,01/01/2001 12:00:00 AM,85
+Pacific Heights,01/01/2006 12:00:00 AM,45
+Russian Hill,01/01/2015 12:00:00 AM,66
+,01/01/1997 12:00:00 AM,219
+Twin Peaks,01/01/2011 12:00:00 AM,14
+Outer Mission,01/01/2012 12:00:00 AM,19
+South of Market,01/01/2000 12:00:00 AM,43
+Haight Ashbury,01/01/2009 12:00:00 AM,53
+Visitacion Valley,01/01/1997 12:00:00 AM,15
+Chinatown,01/01/1999 12:00:00 AM,21
+Bernal Heights,01/01/2013 12:00:00 AM,53
+Inner Richmond,01/01/2017 12:00:00 AM,7
+South of Market,01/01/2001 12:00:00 AM,42
+Inner Sunset,01/01/2000 12:00:00 AM,80
+Potrero Hill,01/01/1999 12:00:00 AM,65
+Lone Mountain/USF,01/01/2000 12:00:00 AM,59
+Sunset/Parkside,01/01/2016 12:00:00 AM,124
+Presidio Heights,01/01/2013 12:00:00 AM,14
+Inner Richmond,01/01/2016 12:00:00 AM,51
+,01/01/2015 12:00:00 AM,29
+Russian Hill,01/01/1997 12:00:00 AM,69
+Sunset/Parkside,01/01/2017 12:00:00 AM,30
+Tenderloin,01/01/2003 12:00:00 AM,189
+South of Market,01/01/2006 12:00:00 AM,35
+Japantown,01/01/2012 12:00:00 AM,3
+Pacific Heights,01/01/2000 12:00:00 AM,90
+Hayes Valley,01/01/2012 12:00:00 AM,37
+Glen Park,01/01/2008 12:00:00 AM,8
+Pacific Heights,01/01/2001 12:00:00 AM,63
+Inner Sunset,01/01/2006 12:00:00 AM,32
+Twin Peaks,01/01/2009 12:00:00 AM,7
+Lone Mountain/USF,01/01/2006 12:00:00 AM,26
+Visitacion Valley,01/01/2015 12:00:00 AM,27
+Bernal Heights,01/01/2014 12:00:00 AM,44
+North Beach,01/01/2008 12:00:00 AM,38
+Presidio Heights,01/01/2014 12:00:00 AM,17
+Haight Ashbury,01/01/2011 12:00:00 AM,31
+Tenderloin,01/01/2010 12:00:00 AM,140
+Oceanview/Merced/Ingleside,01/01/2017 12:00:00 AM,3
+Financial District/South Beach,01/01/2014 12:00:00 AM,9
+Bayview Hunters Point,01/01/2007 12:00:00 AM,42
+Mission Bay,01/01/1998 12:00:00 AM,1
+Outer Richmond,01/01/2016 12:00:00 AM,95
+Haight Ashbury,01/01/2003 12:00:00 AM,62
+Outer Mission,01/01/1997 12:00:00 AM,28
+Chinatown,01/01/2008 12:00:00 AM,15
+Castro/Upper Market,01/01/2016 12:00:00 AM,46
+,01/01/2012 12:00:00 AM,30
+Western Addition,01/01/2007 12:00:00 AM,15
+Portola,01/01/2013 12:00:00 AM,10
+Japantown,01/01/2015 12:00:00 AM,4
+Nob Hill,01/01/2017 12:00:00 AM,5
+Potrero Hill,01/01/2008 12:00:00 AM,17
+Treasure Island,01/01/2007 12:00:00 AM,2
+West of Twin Peaks,01/01/2013 12:00:00 AM,52
+Marina,01/01/2014 12:00:00 AM,59
+Mission,01/01/2013 12:00:00 AM,237
+Visitacion Valley,01/01/2012 12:00:00 AM,14
+Tenderloin,01/01/2011 12:00:00 AM,56
+Haight Ashbury,01/01/2010 12:00:00 AM,41
+Hayes Valley,01/01/2015 12:00:00 AM,71
+Seacliff,01/01/2000 12:00:00 AM,2
+Lakeshore,01/01/2013 12:00:00 AM,98
+Noe Valley,01/01/2007 12:00:00 AM,45
+McLaren Park,01/01/2000 12:00:00 AM,1
+Lakeshore,01/01/2016 12:00:00 AM,311
+Lone Mountain/USF,01/01/2003 12:00:00 AM,32
+Inner Sunset,01/01/2003 12:00:00 AM,50
+Lincoln Park,01/01/2013 12:00:00 AM,1
+Hayes Valley,01/01/2008 12:00:00 AM,75
+Glen Park,01/01/2012 12:00:00 AM,4
+Financial District/South Beach,01/01/2017 12:00:00 AM,1
+Russian Hill,01/01/1999 12:00:00 AM,76
+Oceanview/Merced/Ingleside,01/01/2014 12:00:00 AM,44
+Mission,01/01/2016 12:00:00 AM,182
+McLaren Park,01/01/2009 12:00:00 AM,2
+Nob Hill,01/01/2014 12:00:00 AM,93
+North Beach,01/01/2012 12:00:00 AM,28
+South of Market,01/01/2010 12:00:00 AM,148
+Inner Sunset,01/01/2010 12:00:00 AM,31
+Lone Mountain/USF,01/01/2010 12:00:00 AM,22
+Marina,01/01/2017 12:00:00 AM,3
+West of Twin Peaks,01/01/2016 12:00:00 AM,32
+Chinatown,01/01/2015 12:00:00 AM,31
+South of Market,01/01/2003 12:00:00 AM,29
+Outer Richmond,01/01/2013 12:00:00 AM,86
+Tenderloin,01/01/2006 12:00:00 AM,123
+Potrero Hill,01/01/2015 12:00:00 AM,36
+Castro/Upper Market,01/01/2013 12:00:00 AM,71
+Portola,01/01/2016 12:00:00 AM,26
+Sunset/Parkside,01/01/2014 12:00:00 AM,127
+Glen Park,01/01/2015 12:00:00 AM,2
+South of Market,01/01/2011 12:00:00 AM,37
+Outer Mission,01/01/1999 12:00:00 AM,38
+Twin Peaks,01/01/2000 12:00:00 AM,32
+Visitacion Valley,01/01/2008 12:00:00 AM,10
+Excelsior,01/01/2005 12:00:00 AM,32
+Western Addition,01/01/1998 12:00:00 AM,26
+Western Addition,01/01/2002 12:00:00 AM,26
+North Beach,01/01/2015 12:00:00 AM,46
+Bayview Hunters Point,01/01/2002 12:00:00 AM,40
+Bayview Hunters Point,01/01/1998 12:00:00 AM,52
+Mission Bay,01/01/2007 12:00:00 AM,2
+Bernal Heights,01/01/2017 12:00:00 AM,9
+Chinatown,01/01/2012 12:00:00 AM,17
+Haight Ashbury,01/01/2006 12:00:00 AM,51
+,01/01/2008 12:00:00 AM,28
+Noe Valley,01/01/2002 12:00:00 AM,45
+Noe Valley,01/01/1998 12:00:00 AM,132
+Pacific Heights,01/01/2009 12:00:00 AM,30
+Presidio,01/01/2001 12:00:00 AM,3
+Inner Richmond,01/01/2013 12:00:00 AM,48
+Twin Peaks,01/01/2001 12:00:00 AM,10
+Presidio Heights,01/01/2017 12:00:00 AM,4
+Excelsior,01/01/2004 12:00:00 AM,36
+Lone Mountain/USF,01/01/2011 12:00:00 AM,18
+Inner Sunset,01/01/2011 12:00:00 AM,30
+Potrero Hill,01/01/2012 12:00:00 AM,25
+Visitacion Valley,01/01/2010 12:00:00 AM,21
+,01/01/2003 12:00:00 AM,38
+Sunset/Parkside,01/01/2007 12:00:00 AM,99
+Chinatown,01/01/2006 12:00:00 AM,9
+Haight Ashbury,01/01/2012 12:00:00 AM,49
+Outer Mission,01/01/2009 12:00:00 AM,24
+Inner Richmond,01/01/2005 12:00:00 AM,32
+Hayes Valley,01/01/2011 12:00:00 AM,44
+Potrero Hill,01/01/2006 12:00:00 AM,14
+Tenderloin,01/01/2015 12:00:00 AM,173
+Financial District/South Beach,01/01/1998 12:00:00 AM,14
+Financial District/South Beach,01/01/2002 12:00:00 AM,12
+Mission Bay,01/01/2014 12:00:00 AM,1
+Inner Richmond,01/01/2004 12:00:00 AM,37
+Japantown,01/01/2011 12:00:00 AM,4
+,01/01/2010 12:00:00 AM,38
+Excelsior,01/01/2013 12:00:00 AM,67
+Visitacion Valley,01/01/2003 12:00:00 AM,17
+Pacific Heights,01/01/1999 12:00:00 AM,69
+Marina,01/01/2002 12:00:00 AM,78
+Marina,01/01/1998 12:00:00 AM,114
+Seacliff,01/01/1999 12:00:00 AM,5
+Haight Ashbury,01/01/2015 12:00:00 AM,59
+Hayes Valley,01/01/2010 12:00:00 AM,33
+Western Addition,01/01/2017 12:00:00 AM,2
+Oceanview/Merced/Ingleside,01/01/2007 12:00:00 AM,28
+Bayview Hunters Point,01/01/2017 12:00:00 AM,13
+South of Market,01/01/2008 12:00:00 AM,66
+Japantown,01/01/2003 12:00:00 AM,1
+Russian Hill,01/01/2009 12:00:00 AM,19
+Outer Richmond,01/01/2005 12:00:00 AM,80
+Lincoln Park,01/01/2004 12:00:00 AM,1
+Visitacion Valley,01/01/2011 12:00:00 AM,12
+Tenderloin,01/01/2012 12:00:00 AM,64
+Castro/Upper Market,01/01/2005 12:00:00 AM,95
+Nob Hill,01/01/2007 12:00:00 AM,70
+Glen Park,01/01/2006 12:00:00 AM,9
+Outer Richmond,01/01/2004 12:00:00 AM,77
+Lone Mountain/USF,01/01/2008 12:00:00 AM,27
+Inner Sunset,01/01/2008 12:00:00 AM,48
+Castro/Upper Market,01/01/2004 12:00:00 AM,89
+Presidio Heights,01/01/1998 12:00:00 AM,35
+Presidio Heights,01/01/2002 12:00:00 AM,31
+Hayes Valley,01/01/2003 12:00:00 AM,52
+North Beach,01/01/2006 12:00:00 AM,52
+Bernal Heights,01/01/1998 12:00:00 AM,86
+Bernal Heights,01/01/2002 12:00:00 AM,64
+,01/01/2011 12:00:00 AM,31
+Japantown,01/01/2010 12:00:00 AM,1
+Twin Peaks,01/01/1997 12:00:00 AM,21
+Noe Valley,01/01/2017 12:00:00 AM,10
+Mission,01/01/2005 12:00:00 AM,216
+Lone Mountain/USF,01/01/2015 12:00:00 AM,40
+Inner Sunset,01/01/2015 12:00:00 AM,47
+Chinatown,01/01/2010 12:00:00 AM,22
+Financial District/South Beach,01/01/2007 12:00:00 AM,6
+Bayview Hunters Point,01/01/2014 12:00:00 AM,53
+Russian Hill,01/01/2001 12:00:00 AM,49
+Western Addition,01/01/2014 12:00:00 AM,50
+West of Twin Peaks,01/01/2004 12:00:00 AM,29
+Visitacion Valley,01/01/2006 12:00:00 AM,9
+Lakeshore,01/01/2005 12:00:00 AM,21
+Potrero Hill,01/01/2010 12:00:00 AM,10
+Sunset/Parkside,01/01/2002 12:00:00 AM,124
+Sunset/Parkside,01/01/1998 12:00:00 AM,208
+Portola,01/01/2004 12:00:00 AM,15
+,01/01/2006 12:00:00 AM,35
+Lakeshore,01/01/2004 12:00:00 AM,6
+Marina,01/01/2007 12:00:00 AM,49
+Haight Ashbury,01/01/2008 12:00:00 AM,50
+North Beach,01/01/2011 12:00:00 AM,25
+Chinatown,01/01/2003 12:00:00 AM,10
+Portola,01/01/2005 12:00:00 AM,8
+Pacific Heights,01/01/1997 12:00:00 AM,81
+Noe Valley,01/01/2014 12:00:00 AM,52
+South of Market,01/01/2015 12:00:00 AM,47
+Mission,01/01/2004 12:00:00 AM,220
+Potrero Hill,01/01/2003 12:00:00 AM,24
+Glen Park,01/01/2011 12:00:00 AM,12
+Russian Hill,01/01/2000 12:00:00 AM,80
+West of Twin Peaks,01/01/2005 12:00:00 AM,25
+Outer Mission,01/01/2001 12:00:00 AM,38
+Glen Park,01/01/2003 12:00:00 AM,10
+Seacliff,01/01/1997 12:00:00 AM,3
+Nob Hill,01/01/2002 12:00:00 AM,60
+Nob Hill,01/01/1998 12:00:00 AM,64
+Hayes Valley,01/01/2006 12:00:00 AM,50
+Lone Mountain/USF,01/01/2012 12:00:00 AM,54
+Inner Sunset,01/01/2012 12:00:00 AM,34
+Potrero Hill,01/01/2011 12:00:00 AM,23
+Oceanview/Merced/Ingleside,01/01/1998 12:00:00 AM,58
+Oceanview/Merced/Ingleside,01/01/2002 12:00:00 AM,26
+North Beach,01/01/2003 12:00:00 AM,50
+Chinatown,01/01/2011 12:00:00 AM,32
+Excelsior,01/01/2016 12:00:00 AM,77
+Bernal Heights,01/01/2007 12:00:00 AM,20
+Glen Park,01/01/2010 12:00:00 AM,10
+Tenderloin,01/01/2008 12:00:00 AM,103
+Japantown,01/01/2006 12:00:00 AM,3
+Presidio Heights,01/01/2007 12:00:00 AM,15
+South of Market,01/01/2012 12:00:00 AM,268
+Outer Mission,01/01/2000 12:00:00 AM,60
+North Beach,01/01/2010 12:00:00 AM,19
+Twin Peaks,01/01/1999 12:00:00 AM,11
+Presidio Heights,01/01/2003 12:00:00 AM,17
+Castro/Upper Market,01/01/2001 12:00:00 AM,116
+Hayes Valley,01/01/2002 12:00:00 AM,49
+Hayes Valley,01/01/1998 12:00:00 AM,177
+Seacliff,01/01/2016 12:00:00 AM,4
+Lincoln Park,01/01/2000 12:00:00 AM,2
+Outer Richmond,01/01/2001 12:00:00 AM,124
+Mission,01/01/2009 12:00:00 AM,118
+Financial District/South Beach,01/01/2011 12:00:00 AM,6
+Nob Hill,01/01/2006 12:00:00 AM,78
+Golden Gate Park,01/01/2010 12:00:00 AM,1
+Oceanview/Merced/Ingleside,01/01/2006 12:00:00 AM,24
+Excelsior,01/01/1997 12:00:00 AM,55
+Bernal Heights,01/01/2003 12:00:00 AM,50
+Lakeshore,01/01/2009 12:00:00 AM,9
+North Beach,01/01/2007 12:00:00 AM,32
+Tenderloin,01/01/2014 12:00:00 AM,108
+Portola,01/01/2009 12:00:00 AM,27
+Marina,01/01/2011 12:00:00 AM,39
+Presidio Heights,01/01/2010 12:00:00 AM,13
+Mission Bay,01/01/2015 12:00:00 AM,2
+Glen Park,01/01/2007 12:00:00 AM,13
+West of Twin Peaks,01/01/2009 12:00:00 AM,13
+Outer Richmond,01/01/2000 12:00:00 AM,158
+Bernal Heights,01/01/2010 12:00:00 AM,34
+Castro/Upper Market,01/01/2000 12:00:00 AM,104
+Japantown,01/01/2002 12:00:00 AM,5
+Japantown,01/01/1998 12:00:00 AM,7
+Golden Gate Park,01/01/2011 12:00:00 AM,2
+Potrero Hill,01/01/2007 12:00:00 AM,11
+Visitacion Valley,01/01/1998 12:00:00 AM,28
+Visitacion Valley,01/01/2002 12:00:00 AM,24
+South of Market,01/01/2017 12:00:00 AM,2
+Inner Richmond,01/01/2001 12:00:00 AM,80
+Twin Peaks,01/01/2013 12:00:00 AM,14
+Bayview Hunters Point,01/01/2008 12:00:00 AM,41
+Marina,01/01/2003 12:00:00 AM,42
+Sunset/Parkside,01/01/2006 12:00:00 AM,76
+Chinatown,01/01/2007 12:00:00 AM,19
+Financial District/South Beach,01/01/2010 12:00:00 AM,7
+Western Addition,01/01/2008 12:00:00 AM,24
+Bernal Heights,01/01/2011 12:00:00 AM,43
+Mission Bay,01/01/2012 12:00:00 AM,3
+Noe Valley,01/01/2008 12:00:00 AM,24
+Pacific Heights,01/01/2016 12:00:00 AM,58
+,01/01/1998 12:00:00 AM,106
+,01/01/2002 12:00:00 AM,95
+Haight Ashbury,01/01/2014 12:00:00 AM,42
+Inner Richmond,01/01/2000 12:00:00 AM,73
+Financial District/South Beach,01/01/2003 12:00:00 AM,14
+Presidio Heights,01/01/2011 12:00:00 AM,11
+Marina,01/01/2010 12:00:00 AM,50
+Lone Mountain/USF,01/01/2017 12:00:00 AM,1
+Inner Sunset,01/01/2017 12:00:00 AM,3
+Noe Valley,01/01/2015 12:00:00 AM,41
+Nob Hill,01/01/2010 12:00:00 AM,28
+South of Market,01/01/2014 12:00:00 AM,63
+Sunset/Parkside,01/01/2011 12:00:00 AM,59
+Oceanview/Merced/Ingleside,01/01/2010 12:00:00 AM,29
+Excelsior,01/01/1999 12:00:00 AM,70
+Hayes Valley,01/01/2007 12:00:00 AM,74
+Pacific Heights,01/01/2013 12:00:00 AM,41
+Outer Mission,01/01/2005 12:00:00 AM,22
+Inner Richmond,01/01/2009 12:00:00 AM,20
+Japantown,01/01/2007 12:00:00 AM,4
+Presidio Heights,01/01/2006 12:00:00 AM,21
+Outer Mission,01/01/2004 12:00:00 AM,11
+Glen Park,01/01/2002 12:00:00 AM,17
+Glen Park,01/01/1998 12:00:00 AM,41
+Nob Hill,01/01/2003 12:00:00 AM,65
+Inner Sunset,01/01/2014 12:00:00 AM,41
+Lone Mountain/USF,01/01/2014 12:00:00 AM,33
+Bayview Hunters Point,01/01/2015 12:00:00 AM,74
+Bernal Heights,01/01/2006 12:00:00 AM,33
+Western Addition,01/01/2015 12:00:00 AM,40
+Twin Peaks,01/01/2016 12:00:00 AM,12
+North Beach,01/01/1998 12:00:00 AM,73
+Oceanview/Merced/Ingleside,01/01/2003 12:00:00 AM,44
+North Beach,01/01/2002 12:00:00 AM,26
+Haight Ashbury,01/01/2017 12:00:00 AM,4
+Oceanview/Merced/Ingleside,01/01/2011 12:00:00 AM,21
+Chinatown,01/01/1998 12:00:00 AM,22
+Chinatown,01/01/2002 12:00:00 AM,6
+Mission Bay,01/01/2008 12:00:00 AM,1
+Lakeshore,01/01/2001 12:00:00 AM,2
+Noe Valley,01/01/2012 12:00:00 AM,31
+Portola,01/01/2000 12:00:00 AM,30
+Castro/Upper Market,01/01/2009 12:00:00 AM,45
+Financial District/South Beach,01/01/2006 12:00:00 AM,10
+Nob Hill,01/01/2011 12:00:00 AM,31
+Russian Hill,01/01/2005 12:00:00 AM,27
+West of Twin Peaks,01/01/2000 12:00:00 AM,38
+Outer Richmond,01/01/2009 12:00:00 AM,52
+Sunset/Parkside,01/01/2010 12:00:00 AM,59
+Visitacion Valley,01/01/2007 12:00:00 AM,15
+Mission,01/01/2001 12:00:00 AM,268
+Potrero Hill,01/01/2002 12:00:00 AM,26
+Potrero Hill,01/01/1998 12:00:00 AM,66
+West of Twin Peaks,01/01/2001 12:00:00 AM,46
+Mission,01/01/2000 12:00:00 AM,254
+Tenderloin,01/01/2017 12:00:00 AM,10
+Russian Hill,01/01/2004 12:00:00 AM,15
+Marina,01/01/2006 12:00:00 AM,27
+Western Addition,01/01/2012 12:00:00 AM,28
+,01/01/2007 12:00:00 AM,30
+Sunset/Parkside,01/01/2003 12:00:00 AM,78
+Portola,01/01/2001 12:00:00 AM,33
+Bayview Hunters Point,01/01/2012 12:00:00 AM,48
+McLaren Park,01/01/2013 12:00:00 AM,2
+Outer Richmond,01/01/1999 12:00:00 AM,121
+Presidio Heights,01/01/2015 12:00:00 AM,15
+Mission Bay,01/01/2010 12:00:00 AM,1
+Treasure Island,01/01/2006 12:00:00 AM,7
+Castro/Upper Market,01/01/1999 12:00:00 AM,126
+Bayview Hunters Point,01/01/2006 12:00:00 AM,27
+Sunset/Parkside,01/01/2008 12:00:00 AM,68
+Visitacion Valley,01/01/2014 12:00:00 AM,33
+Marina,01/01/2012 12:00:00 AM,60
+Western Addition,01/01/2006 12:00:00 AM,34
+Bernal Heights,01/01/2015 12:00:00 AM,73
+Seacliff,01/01/2004 12:00:00 AM,1
+Noe Valley,01/01/2006 12:00:00 AM,69
+North Beach,01/01/2017 12:00:00 AM,4
+Haight Ashbury,01/01/1998 12:00:00 AM,103
+Haight Ashbury,01/01/2002 12:00:00 AM,69
+,01/01/2014 12:00:00 AM,69
+Golden Gate Park,01/01/2015 12:00:00 AM,1
+Glen Park,01/01/2017 12:00:00 AM,4
+Russian Hill,01/01/2013 12:00:00 AM,37
+Financial District/South Beach,01/01/2012 12:00:00 AM,19
+Excelsior,01/01/2009 12:00:00 AM,48
+South of Market,01/01/2007 12:00:00 AM,45
+Lakeshore,01/01/1997 12:00:00 AM,55
+Inner Richmond,01/01/1999 12:00:00 AM,63
+Presidio Heights,01/01/2012 12:00:00 AM,11
+Pacific Heights,01/01/2004 12:00:00 AM,36
+Nob Hill,01/01/2008 12:00:00 AM,46
+Potrero Hill,01/01/2017 12:00:00 AM,2
+Chinatown,01/01/2017 12:00:00 AM,6
+Marina,01/01/2015 12:00:00 AM,68
+Bernal Heights,01/01/2012 12:00:00 AM,31
+Mission Bay,01/01/2011 12:00:00 AM,5
+Mission,01/01/1997 12:00:00 AM,279
+Oceanview/Merced/Ingleside,01/01/2008 12:00:00 AM,28
+Hayes Valley,01/01/2014 12:00:00 AM,61
+Japantown,01/01/2014 12:00:00 AM,6
+West of Twin Peaks,01/01/1997 12:00:00 AM,48
+Financial District/South Beach,01/01/2015 12:00:00 AM,7
+Inner Sunset,01/01/2007 12:00:00 AM,69
+Lone Mountain/USF,01/01/2007 12:00:00 AM,24
+Outer Mission,01/01/2013 12:00:00 AM,20
+Pacific Heights,01/01/2005 12:00:00 AM,50
+Tenderloin,01/01/1998 12:00:00 AM,72
+Tenderloin,01/01/2002 12:00:00 AM,85
+Portola,01/01/1997 12:00:00 AM,21
+Outer Richmond,01/01/1997 12:00:00 AM,140
+Potrero Hill,01/01/2014 12:00:00 AM,35
+Treasure Island,01/01/2010 12:00:00 AM,5
+Noe Valley,01/01/2003 12:00:00 AM,53
+Castro/Upper Market,01/01/1997 12:00:00 AM,153
+Outer Mission,01/01/2016 12:00:00 AM,45
+Hayes Valley,01/01/2017 12:00:00 AM,8
+Excelsior,01/01/2001 12:00:00 AM,82
+Western Addition,01/01/2010 12:00:00 AM,18
+Financial District/South Beach,01/01/2008 12:00:00 AM,3
+Twin Peaks,01/01/2004 12:00:00 AM,13
+Chinatown,01/01/2014 12:00:00 AM,29
+Bayview Hunters Point,01/01/2010 12:00:00 AM,45
+Nob Hill,01/01/2015 12:00:00 AM,66
+Noe Valley,01/01/2010 12:00:00 AM,31
+Twin Peaks,01/01/2005 12:00:00 AM,22
+Excelsior,01/01/2000 12:00:00 AM,67
+Treasure Island,01/01/2003 12:00:00 AM,4
+Bayview Hunters Point,01/01/2003 12:00:00 AM,38
+Haight Ashbury,01/01/2007 12:00:00 AM,47
+Marina,01/01/2008 12:00:00 AM,40
+Western Addition,01/01/2003 12:00:00 AM,18
+Sunset/Parkside,01/01/2012 12:00:00 AM,121
+Oceanview/Merced/Ingleside,01/01/2015 12:00:00 AM,46
+Inner Richmond,01/01/1997 12:00:00 AM,115
+Western Addition,01/01/2011 12:00:00 AM,17
+Lakeshore,01/01/1999 12:00:00 AM,61
+Russian Hill,01/01/2016 12:00:00 AM,45
+Bayview Hunters Point,01/01/2011 12:00:00 AM,36
+Visitacion Valley,01/01/2017 12:00:00 AM,5
+Mission,01/01/1999 12:00:00 AM,287
+South of Market,01/01/1998 12:00:00 AM,44
+South of Market,01/01/2002 12:00:00 AM,33
+Presidio Heights,01/01/2008 12:00:00 AM,19
+Tenderloin,01/01/2007 12:00:00 AM,162
+Nob Hill,01/01/2012 12:00:00 AM,70
+North Beach,01/01/2014 12:00:00 AM,51
+West of Twin Peaks,01/01/1999 12:00:00 AM,41
+Lone Mountain/USF,01/01/1998 12:00:00 AM,67
+Lone Mountain/USF,01/01/2002 12:00:00 AM,32
+Inner Sunset,01/01/1998 12:00:00 AM,107
+Inner Sunset,01/01/2002 12:00:00 AM,55
+Sunset/Parkside,01/01/2015 12:00:00 AM,158
+Oceanview/Merced/Ingleside,01/01/2012 12:00:00 AM,20
+Glen Park,01/01/2014 12:00:00 AM,6
+Bernal Heights,01/01/2008 12:00:00 AM,47
+,01/01/2017 12:00:00 AM,7
+Portola,01/01/1999 12:00:00 AM,30
+Noe Valley,01/01/2011 12:00:00 AM,54
+Outer Richmond,01/01/2012 12:00:00 AM,72
+Tenderloin,01/01/2005 12:00:00 AM,185
+Pacific Heights,01/01/2002 12:00:00 AM,64
+Pacific Heights,01/01/1998 12:00:00 AM,87
+Inner Richmond,01/01/2015 12:00:00 AM,53
+Castro/Upper Market,01/01/2012 12:00:00 AM,50
+,01/01/2016 12:00:00 AM,23
+Noe Valley,01/01/2009 12:00:00 AM,33
+Marina,01/01/1999 12:00:00 AM,65
+Bayview Hunters Point,01/01/2009 12:00:00 AM,44
+Visitacion Valley,01/01/2016 12:00:00 AM,34
+Western Addition,01/01/2009 12:00:00 AM,21
+North Beach,01/01/2013 12:00:00 AM,85
+Financial District/South Beach,01/01/1999 12:00:00 AM,48
+Sunset/Parkside,01/01/1997 12:00:00 AM,152
+Russian Hill,01/01/2017 12:00:00 AM,4
+Tenderloin,01/01/2004 12:00:00 AM,94
+Glen Park,01/01/2013 12:00:00 AM,11
+Treasure Island,01/01/2009 12:00:00 AM,18
+Twin Peaks,01/01/2007 12:00:00 AM,23
+Inner Richmond,01/01/2012 12:00:00 AM,38
+Castro/Upper Market,01/01/2015 12:00:00 AM,75
+West of Twin Peaks,01/01/2008 12:00:00 AM,23
+Outer Richmond,01/01/2015 12:00:00 AM,133
+Potrero Hill,01/01/2013 12:00:00 AM,17
+Presidio Heights,01/01/1999 12:00:00 AM,39
+Portola,01/01/2008 12:00:00 AM,10
+Bernal Heights,01/01/1999 12:00:00 AM,70
+Chinatown,01/01/2013 12:00:00 AM,16
+Japantown,01/01/2016 12:00:00 AM,11
+Haight Ashbury,01/01/2005 12:00:00 AM,58
+Nob Hill,01/01/1997 12:00:00 AM,86
+Hayes Valley,01/01/2016 12:00:00 AM,56
+Seacliff,01/01/2002 12:00:00 AM,3
+Seacliff,01/01/1998 12:00:00 AM,2
+Lakeshore,01/01/2008 12:00:00 AM,12
+Haight Ashbury,01/01/2004 12:00:00 AM,45
+Excelsior,01/01/2006 12:00:00 AM,29
+Oceanview/Merced/Ingleside,01/01/1997 12:00:00 AM,35
+Mission,01/01/2008 12:00:00 AM,151
+Outer Mission,01/01/2017 12:00:00 AM,9
+Lakeshore,01/01/2015 12:00:00 AM,82
+Pacific Heights,01/01/2007 12:00:00 AM,42
+Hayes Valley,01/01/2013 12:00:00 AM,34
+Marina,01/01/1997 12:00:00 AM,90
+Inner Sunset,01/01/2005 12:00:00 AM,40
+South of Market,01/01/2004 12:00:00 AM,30
+Mission,01/01/2015 12:00:00 AM,175
+Lone Mountain/USF,01/01/2005 12:00:00 AM,21
+West of Twin Peaks,01/01/2015 12:00:00 AM,43
+Chinatown,01/01/2016 12:00:00 AM,33
+Castro/Upper Market,01/01/2008 12:00:00 AM,88
+Inner Sunset,01/01/2004 12:00:00 AM,34
+Lone Mountain/USF,01/01/2004 12:00:00 AM,34
+South of Market,01/01/2005 12:00:00 AM,68
+Outer Richmond,01/01/2008 12:00:00 AM,96
+Japantown,01/01/2013 12:00:00 AM,1
+Excelsior,01/01/2011 12:00:00 AM,29
+Outer Mission,01/01/2014 12:00:00 AM,35
+Portola,01/01/2015 12:00:00 AM,31
+Financial District/South Beach,01/01/1997 12:00:00 AM,7
+Sunset/Parkside,01/01/1999 12:00:00 AM,180
+Potrero Hill,01/01/2016 12:00:00 AM,32
+Mission Bay,01/01/2009 12:00:00 AM,3
+Western Addition,01/01/2000 12:00:00 AM,35
+Lakeshore,01/01/2012 12:00:00 AM,9
+Noe Valley,01/01/2001 12:00:00 AM,65
+Glen Park,01/01/2016 12:00:00 AM,12
+Presidio Heights,01/01/1997 12:00:00 AM,34
+Bayview Hunters Point,01/01/2000 12:00:00 AM,79
+Mission,01/01/2012 12:00:00 AM,170
+Visitacion Valley,01/01/2013 12:00:00 AM,13
+Excelsior,01/01/2003 12:00:00 AM,43
+Bernal Heights,01/01/1997 12:00:00 AM,92
+Presidio,01/01/2002 12:00:00 AM,2
+Twin Peaks,01/01/2002 12:00:00 AM,7
+North Beach,01/01/2016 12:00:00 AM,63
+Twin Peaks,01/01/1998 12:00:00 AM,16
+Nob Hill,01/01/1999 12:00:00 AM,57
+Inner Richmond,01/01/2008 12:00:00 AM,52
+West of Twin Peaks,01/01/2012 12:00:00 AM,26
+Bayview Hunters Point,01/01/2001 12:00:00 AM,62
+Oceanview/Merced/Ingleside,01/01/1999 12:00:00 AM,35
+Russian Hill,01/01/2014 12:00:00 AM,58
+McLaren Park,01/01/2007 12:00:00 AM,1
+Noe Valley,01/01/2000 12:00:00 AM,93
+Western Addition,01/01/2001 12:00:00 AM,35
+Excelsior,01/01/2010 12:00:00 AM,20
+Portola,01/01/2012 12:00:00 AM,24
+,01/01/2013 12:00:00 AM,47
+Visitacion Valley,01/01/2004 12:00:00 AM,14
+West of Twin Peaks,01/01/2006 12:00:00 AM,33
+Inner Richmond,01/01/2003 12:00:00 AM,42
+Financial District/South Beach,01/01/2000 12:00:00 AM,19
+Portola,01/01/2006 12:00:00 AM,15
+Marina,01/01/2001 12:00:00 AM,62
+Tenderloin,01/01/2016 12:00:00 AM,157
+,01/01/2005 12:00:00 AM,46
+Inner Richmond,01/01/2010 12:00:00 AM,16
+Lakeshore,01/01/2006 12:00:00 AM,16
+,01/01/2004 12:00:00 AM,51
+Marina,01/01/2000 12:00:00 AM,68
+Oceanview/Merced/Ingleside,01/01/2009 12:00:00 AM,77
+Financial District/South Beach,01/01/2001 12:00:00 AM,4
+Russian Hill,01/01/2007 12:00:00 AM,44
+Outer Richmond,01/01/2011 12:00:00 AM,50
+Excelsior,01/01/2008 12:00:00 AM,54
+Visitacion Valley,01/01/2005 12:00:00 AM,14
+Nob Hill,01/01/2009 12:00:00 AM,16
+Mission,01/01/2006 12:00:00 AM,184
+Seacliff,01/01/2014 12:00:00 AM,5
+Castro/Upper Market,01/01/2011 12:00:00 AM,37
+Presidio Heights,01/01/2001 12:00:00 AM,33
+Castro/Upper Market,01/01/2003 12:00:00 AM,86
+Hayes Valley,01/01/2004 12:00:00 AM,45
+Twin Peaks,01/01/2017 12:00:00 AM,4
+Noe Valley,01/01/1997 12:00:00 AM,89
+Outer Richmond,01/01/2003 12:00:00 AM,55
+South of Market,01/01/2013 12:00:00 AM,124
+Haight Ashbury,01/01/2016 12:00:00 AM,48
+Pacific Heights,01/01/2014 12:00:00 AM,71
+Bernal Heights,01/01/2001 12:00:00 AM,60
+Sunset/Parkside,01/01/2009 12:00:00 AM,64
+Outer Richmond,01/01/2010 12:00:00 AM,50
+Bernal Heights,01/01/2000 12:00:00 AM,89
+Castro/Upper Market,01/01/2010 12:00:00 AM,42
+Inner Richmond,01/01/2011 12:00:00 AM,19
+Western Addition,01/01/1997 12:00:00 AM,44
+Hayes Valley,01/01/2005 12:00:00 AM,44
+Outer Mission,01/01/2007 12:00:00 AM,22
+Inner Sunset,01/01/2013 12:00:00 AM,56
+Lone Mountain/USF,01/01/2013 12:00:00 AM,36
+Lincoln Park,01/01/2003 12:00:00 AM,1
+Japantown,01/01/2004 12:00:00 AM,1
+Bayview Hunters Point,01/01/1997 12:00:00 AM,23
+Presidio Heights,01/01/2000 12:00:00 AM,51
+Twin Peaks,01/01/2014 12:00:00 AM,9
+Chinatown,01/01/2004 12:00:00 AM,19
+Lakeshore,01/01/2003 12:00:00 AM,3
+Sunset/Parkside,01/01/2000 12:00:00 AM,182
+West of Twin Peaks,01/01/2010 12:00:00 AM,26
+Inner Sunset,01/01/2016 12:00:00 AM,41
+Lone Mountain/USF,01/01/2016 12:00:00 AM,28
+Bernal Heights,01/01/2009 12:00:00 AM,30
+Presidio Heights,01/01/2009 12:00:00 AM,12
+Mission,01/01/2003 12:00:00 AM,175
+Potrero Hill,01/01/2004 12:00:00 AM,31
+Pacific Heights,01/01/2017 12:00:00 AM,7
+Portola,01/01/2010 12:00:00 AM,6
+Excelsior,01/01/2012 12:00:00 AM,42
+West of Twin Peaks,01/01/2003 12:00:00 AM,37
+Lakeshore,01/01/2010 12:00:00 AM,167
+Russian Hill,01/01/2002 12:00:00 AM,29
+Russian Hill,01/01/1998 12:00:00 AM,70
+Inner Richmond,01/01/2006 12:00:00 AM,40
+Potrero Hill,01/01/2005 12:00:00 AM,21
+Sunset/Parkside,01/01/2001 12:00:00 AM,159
+Portola,01/01/2003 12:00:00 AM,8
+Chinatown,01/01/2005 12:00:00 AM,10
+Mission,01/01/2010 12:00:00 AM,114
+South of Market,01/01/2016 12:00:00 AM,66
+Haight Ashbury,01/01/2013 12:00:00 AM,41
+Marina,01/01/2009 12:00:00 AM,12
+Oceanview/Merced/Ingleside,01/01/2000 12:00:00 AM,58
+Portola,01/01/2011 12:00:00 AM,13
+Noe Valley,01/01/1999 12:00:00 AM,88
+North Beach,01/01/2005 12:00:00 AM,21
+Nob Hill,01/01/2000 12:00:00 AM,85
+Excelsior,01/01/2015 12:00:00 AM,88
+Lincoln Park,01/01/2006 12:00:00 AM,5
+Glen Park,01/01/2005 12:00:00 AM,6
+West of Twin Peaks,01/01/2011 12:00:00 AM,23
+Mission,01/01/2011 12:00:00 AM,126
+Financial District/South Beach,01/01/2009 12:00:00 AM,13
+Castro/Upper Market,01/01/2006 12:00:00 AM,116
+Nob Hill,01/01/2001 12:00:00 AM,53
+Tenderloin,01/01/2013 12:00:00 AM,96
+Outer Mission,01/01/2002 12:00:00 AM,21
+Outer Mission,01/01/1998 12:00:00 AM,41
+Glen Park,01/01/2004 12:00:00 AM,8
+Outer Richmond,01/01/2006 12:00:00 AM,67
+Lakeshore,01/01/2011 12:00:00 AM,201
+Western Addition,01/01/1999 12:00:00 AM,48
+Oceanview/Merced/Ingleside,01/01/2001 12:00:00 AM,51
+Bayview Hunters Point,01/01/1999 12:00:00 AM,65
+North Beach,01/01/2004 12:00:00 AM,27
