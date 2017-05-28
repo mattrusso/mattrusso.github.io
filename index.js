@@ -158,8 +158,9 @@ function drawGraph(data, title, id) {
 
     var containerId = "graph-" + id;
     var containerIdSelector = "#"+containerId;
+
     // remove graph
-    d3.selectAll(containerIdSelector+' svg').remove();
+    d3.selectAll(containerIdSelector).remove();
 
     d3.select("#graphs").append("div").attr("id", containerId).attr("class", "graph-cell col-xs-12 col-sm-4");
     d3.select(containerIdSelector).append("h2").html(title);
@@ -228,4 +229,5 @@ function drawGraph(data, title, id) {
     svg.append("g")
         .attr("class", "axis")
         .call(d3.axisLeft(y).tickValues(y.domain()));
+
 }
