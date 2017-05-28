@@ -2,8 +2,6 @@ import * as d3 from 'd3';
 require("./css/vendor/bootstrap.css");
 require("./css/base.scss");
 
-var carShare = [];
-var graphNum = 0;
 var minDate = d3.select("#min-year").node().value;
 var maxDate = d3.select("#max-year").node().value;
 
@@ -41,7 +39,7 @@ function initPage() {
         .rollup(function(leaves) { return leaves.length; })
         .entries(data);
 
-        drawGraph(nested_data, "Onstreet Carshare Stations")
+        drawGraph(nested_data, "Onstreet Carshare Stations", "carshare")
 
     });
 
@@ -71,7 +69,7 @@ function initPage() {
         .rollup(function(leaves) { return leaves.length; })
         .entries(data);
 
-        drawGraph(nested_data,"Buyout Agreements")
+        drawGraph(nested_data,"Buyout Agreements", "buyout")
     });
 
     d3.csv('/../data/Count_of_Eviction_Notices_By_Analysis_Neighborhood_and_Year.csv', function(data) {
@@ -90,7 +88,7 @@ function initPage() {
         })
         .entries(data);
 
-        drawGraph(nested_data, "Eviction Notices")
+        drawGraph(nested_data, "Eviction Notices", "eviction")
 
     });
 
@@ -105,7 +103,7 @@ function initPage() {
         .rollup(function(leaves) { return leaves.length; })
         .entries(data);
 
-        drawGraph(nested_data, "Appeals to the Rent Board")
+        drawGraph(nested_data, "Appeals to the Rent Board", "rent")
 
     });
 
@@ -127,7 +125,7 @@ function initPage() {
 
         nested_data.splice(0, 1)
 
-        drawGraph(nested_data, "Newly Registered Businesses")
+        drawGraph(nested_data, "Newly Registered Businesses", "business")
 
     });
 
@@ -151,20 +149,22 @@ function initPage() {
 
         nested_data.splice(0, 1)
 
-        drawGraph(nested_data, "Newly Planted Trees")
+        drawGraph(nested_data, "Newly Planted Trees", "trees")
 
     });
 }
 
-function drawGraph(data, title) {
+function drawGraph(data, title, id) {
 
-    graphNum = graphNum + 1;
-    var id = "graph-" + graphNum;
+    var containerId = "graph-" + id;
+    var containerIdSelector = "#"+containerId;
+    // remove graph
+    d3.selectAll(containerIdSelector+' svg').remove();
 
-    d3.select("#graphs").append("div").attr("id", id).attr("class", "graph-cell col-xs-12 col-sm-4");
-    d3.select("#"+id).append("h2").html(title);
+    d3.select("#graphs").append("div").attr("id", containerId).attr("class", "graph-cell col-xs-12 col-sm-4");
+    d3.select(containerIdSelector).append("h2").html(title);
 
-    var container = d3.select("#"+id);
+    var container = d3.select(containerIdSelector);
     var containerWidth = container.node().getBoundingClientRect().width;
 
     // set the dimensions and margins of the graph
