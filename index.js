@@ -228,5 +228,4 @@ function drawGraph(data, title) {
     svg.append("g")
         .attr("class", "axis")
         .call(d3.axisLeft(y).tickValues(y.domain()));
-
 }

@@ -1,16 +1,14 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './index.html',
-  filename: 'index.html',
-  inject: 'body'
-})
+var path = require('path');
+const webpack = require('webpack');
 
 const loaders = {
     jsxLoader: {
         test: /\.jsx?$/,
-        exclude: /node_modules|typescript|\.test\.js/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
+        query: {
+          presets: ["es2015", "react"]
+        }
     },
     scssLoader: {
         test: /\.scss$/,
@@ -23,20 +21,27 @@ const loaders = {
         loader: 'style-loader!css-loader',
     }
 };
-
-module.exports = { 
-  entry: './index.js', 
-  output: { 
-    path: path.join(__dirname, './'),
-    publicPath: './', // instead of publicPath: '/build/' 
-    filename: 'bundle.js'
-  }, 
-  module: { 
-    loaders: [ 
-      loaders.jsxLoader,
-      loaders.scssLoader,
-      loaders.cssLoader
+const app = {
+    entry: "./index.js",
+    output: {
+        path: __dirname,
+        filename: "bundle.js",
+    },
+    module: {
+        loaders: [
+            loaders.jsxLoader,
+            loaders.scssLoader,
+            loaders.cssLoader,
+        ]
+    },
+    plugins:[
+      new webpack.DefinePlugin({
+        'process.env':{
+          'NODE_ENV': JSON.stringify('production')
+        }
+      }),
     ]
-  }, 
-  plugins: [HtmlWebpackPluginConfig]
-}
+};
+module.exports = [
+    app
+]
