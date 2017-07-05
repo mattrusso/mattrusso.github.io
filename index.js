@@ -7,28 +7,28 @@ require("./css/base.scss");
 var minDate = d3.select("#min-year").node().value;
 var maxDate = d3.select("#max-year").node().value;
 
-initPage();
+drawTrends();
 
 d3.select("#min-year").on("change", function() {
     d3.selectAll("div.graph-cell").remove();
     minDate = d3.select("#min-year").node().value;
-    initPage();
+    drawTrends();
 });
 d3.select("#max-year").on("change", function() {
     d3.selectAll("div.graph-cell").remove();
     maxDate = d3.select("#max-year").node().value;
-    initPage();
+    drawTrends();
 });
 
 window.addEventListener("resize", function() {
     d3.selectAll("div.graph-cell").remove();
-    initPage();
+    drawTrends();
 
 });
 
 
 // calling data and then calling draw
-function initPage() {
+function drawTrends() {
 
     d3.csv('/../data/Carshare_Onstreet.csv', function(data) {
         var nested_data = d3.nest()
@@ -236,61 +236,12 @@ function drawGraph(data, title, id) {
 
 
 
-// d3.json("/../data/new-topo.json", function(error, data) {
-
-//     var svg = d3.select("#map").append("svg")
-//     .attr("width", "100%")
-//     .attr("height", "100%");
-
-
-//     var featureCollection = topojson.feature(data, data.objects.cb_2016_us_zcta510_500k);
-
-//             // d3 type of projection
-//             var proj = d3.geoMercator(),
-//             // d3 path generator using this projection to create these paths
-//             path = d3.geoPath(proj);
-
-//         var paths = svg.selectAll("path")
-//             .data(featureCollection.features, function(d){
-//                 return d;
-//             });
-
-//         paths.enter().append("path")
-//             .attr("d", path)
-//             .attr("fill", "#254152");
-
-//         // paths.attr("fill", function(d){
-//         //     return d.id === "BR" ? "#F0AE9C" : "#254152";
-//         // });
-
-//         var points = [
-//         // longitude then laditude
-//         { "name" : "Boston", "coords" : [-71.0589, 42.3601]}
-//         ];
-
-//         var points = svg.selectAll("circle")
-//             .data(points, function(d){
-//                 return d.name;
-//             });
-
-//         points.enter().append("circle")
-//             .attr("fill", "#FFDE08")
-//             .attr("r", 5)
-//             .attr("transform", function(d){
-//                 return "translate(" + proj(d.coords) + ")";
-//             });
-
-// });
-
 function drawWater(svg, centroid) {
 
     d3.json("/../data/test4.json", function(error, data) {
 
         var h = d3.select("#map").node().getBoundingClientRect().height;
         var w = d3.select("#map").node().getBoundingClientRect().width;
-
-
-
 
         var featureCollection = topojson.feature(data, data.objects.PVS_16_v2_water_06075);
         var featureCollection2 = topojson.feature(data, data.objects.PVS_16_v2_water_06075);
@@ -312,8 +263,6 @@ function drawWater(svg, centroid) {
         var hscale  = scale*w  / (bounds[1][0] - bounds[0][0]);
         var vscale  = scale*h / (bounds[1][1] - bounds[0][1]);
         var scale   = (hscale < vscale) ? hscale : vscale;
-        // var offset  = [w - (bounds[0][0] + bounds[1][0])/2,
-        // h - (bounds[0][1] + bounds[1][1])/2];
 
         proj = d3.geoMercator().center(center)
         .scale(scale).translate(offset);
@@ -335,7 +284,8 @@ function drawWater(svg, centroid) {
 }
 
 
-d3.json("/../data/test2.json", function(error, data) {
+
+function drawMap() { d3.json("/../data/test2.json", function(error, data) {
 
     var svg1 = d3.select("#map").append("svg")
     .attr("width", "100%")
@@ -347,11 +297,10 @@ d3.json("/../data/test2.json", function(error, data) {
     var w = d3.select("#map").node().getBoundingClientRect().width;
 
 
+
     // var featureCollection = topojson.feature(data, data.objects.zip_codes_for_the_usa);
 
     var featureCollection = topojson.feature(data, data.objects.PVS_16_v2_faces_06075);
-    // console.log(data)
-    // return;
     featureCollection.features.splice(979,1)
     featureCollection.features.splice(8083,1)
     var names = ["SAN FRANCISCO"];
@@ -410,17 +359,26 @@ d3.json("/../data/test2.json", function(error, data) {
         .attr("fill", "#535353");
 
     drawWater(svg, center)
-    drawTrees(svg1, 2015, center);
+
+    d3.select("#map-year").on("change", function() {
+
+        var year = d3.select("#map-year").node().value;
+        svg1.selectAll("circle").remove()
+        drawTrees(svg, year, proj);
+    });
+
+
+    drawTrees(svg1, 2016, proj);
+
 
 });
+}
 
 
+function drawTrees(svg, year, proj) {
 
-function drawTrees(svg, year, centroid) {
-
-    d3.csv('/../data/Street_Tree_List.csv', function(data) {
-        var nested_data = d3.nest()
-        .key(function(d) {
+    d3.csv('/../data/testData.csv', function(data) {
+        var nested_data = d3.nest().key(function(d) {
             var date = d.PlantDate.split("/")
             var last = date.length - 1;
             var y = parseFloat(date[last]);
@@ -437,103 +395,46 @@ function drawTrees(svg, year, centroid) {
         var h = d3.select("#map").node().getBoundingClientRect().height;
         var w = d3.select("#map").node().getBoundingClientRect().width;
 
-        var center = centroid
         var offset = [w/2, h/2];
 
         var g = svg.append("g").attr("class", "trees");
 
-        var coordsx = []
-        var coordsy = []
-        for (var i = 0; i < nested_data[0].values.length; i++ ) {
-            var val = nested_data[0].values[i];
-            var y = parseFloat(val.YCoord);
-            var x = parseFloat(val.XCoord);
-            x = x.toFixed(3);
-            y = y.toFixed(3);
-            x = parseFloat(x);
-            y = parseFloat(y);
+        var points = svg.selectAll("circle")
+            .data(nested_data[0].values);
 
-            if(!isNan(y)) {
-                coordsy.push(y)
-            }
-            if(!isNan(x)) {
-                coordsx.push(x)
-            }
-        }
+        points.enter().append("circle")
+            .attr("r", 4)
+            .attr("class", function(d) {
+                var className = d.qAddress + " " + d.lon + " " + d.lat;
+                return className;
+            })
+            .attr("cx", function(d) {
+                var p = proj([d.lon,d.lat])
+                var co = p[0]
+                if (isNan(co)) {
+                    co = -10
+                }
+                return co;
+            })
+            .attr("cy", function(d) {
+                var p = proj([d.lon,d.lat])
+                var co = p[1]
+                if (isNan(co)) {
+                    co = -10
+                }
+                return co;
+            })
+            .attr("fill", "lightgreen")
+            .style("opacity", .5);
 
-        var xMax = getMaxOfArray(coordsx);
-        var yMax = getMaxOfArray(coordsy);
-        var xMin = getMinOfArray(coordsx);
-        var yMin = getMinOfArray(coordsy);
-        var yMaxMin = [yMin, yMax];
-        var xMaxMin = [xMin, xMax];
-
-        var projection = d3.geoMercator().scale(1).center(center).translate(offset);
+        points.exit().remove()
 
         function isNan(value) {
             return Number.isNaN(Number(value));
         }
 
-        function getMaxOfArray(numArray) {
-            return Math.max.apply(null, numArray);
-        }
-        function getMinOfArray(numArray) {
-            return Math.min.apply(null, numArray);
-        }
-
-        var h = d3.select("#map").node().getBoundingClientRect().height;
-        var w = d3.select("#map").node().getBoundingClientRect().width;
-
-        for ( var i = 0; i < nested_data[0].values.length; i++) {
-
-
-            var val = nested_data[0].values[i];
-            var y = parseFloat(val.YCoord);
-            var x = parseFloat(val.XCoord);
-            x = x.toFixed(3);
-            y = y.toFixed(3);
-            x = parseFloat(x);
-            y = parseFloat(y);
-            var id = val.TreeID;
-            var address = val.qAddress;
-            var scaley = d3.scaleLinear().domain(yMaxMin).range([0, w]);
-            var scalex = d3.scaleLinear().domain(xMaxMin).range([0, h]);
-
-            if (!isNan(x) && !isNaN(y) ) {
-
-                var treeData = [{"id" : id, "address" : address, "coords" : [scalex(x), scaley(y)]}];
-
-                points.push(g.selectAll("circle")
-                        .data(treeData, function(d) {
-                            return d;
-                        })
-                    )
-
-            }
-
-        }
-
-
-        for (var i = 0; i < points.length; i++ ) {
-
-
-            points[i].enter().append("circle")
-            .attr("fill", "lightgreen")
-            .attr("r", 4)
-            .attr("class", function(d) {
-                return d.address;
-            })
-            .style("opacity", ".5")
-            .attr("transform", function(d){
-                var x = d.coords[0] + (offset[0] * .69);
-                var y = d.coords[1] + (offset[1] * .93);
-                return "translate(" + x +", " + y + ")";
-            });
-        }
-
-        g.style("transform", "scale(.85)");
     });
 
 }
 
-
+drawMap()

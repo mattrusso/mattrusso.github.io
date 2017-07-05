@@ -17,6 +17,24 @@ body {
     stroke: #fff;
     stroke-width: 3px;
 }
+.key-container {
+    background: rgba(0,0,0,0.75);
+    width: 20em;
+    height: 12em;
+    position: absolute;
+    right: 3em;
+    top: 6em;
+    padding: 1em 1em;
+
+    select {
+        width: 100%;
+        font-size: 1.2em;
+        margin: 1em 0;
+        background: transparent;
+        border-color: #ffa884;
+    }
+
+}
 .trend-container {
     display: table;
     width: 100%;
