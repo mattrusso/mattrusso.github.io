@@ -18,11 +18,10 @@ body {
     stroke-width: 3px;
 }
 .key-container {
-    background: rgba(0,0,0,0.75);
-    width: 20em;
-    height: 12em;
+    background: #292c40;
+    width: 25em;
     position: absolute;
-    right: 3em;
+    left: 4em;
     top: 6em;
     padding: 1em 1em;
 
@@ -33,7 +32,57 @@ body {
         background: transparent;
         border-color: #ffa884;
     }
+    .key-rows {
+        color: #ccc;
+        font-weight: 900;
+        font-size: 1.1em;
+        padding: 0 15px
+    }
+    .key-row {
+        border-top: 1px solid #ccc;
+        margin-bottom: 2.5em;
 
+        div {
+            padding: 0.5em 0 0 0;
+        }
+    }
+    .key-tree {
+        width: 13px;
+        height: 13px;
+        background: rgba(144, 238, 144, 0.35);
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid springgreen;
+    }
+    .key-eviction {
+        width: 13px;
+        height: 13px;
+        background: rgba(255, 0, 0, 0.34);
+        display: inline-block;
+        border-radius: 50%;
+        border: 2px solid red;
+    }
+    .key-petition {
+        width: 6px;
+        height: 6px;
+        background: yellow;
+        display: inline-block;
+        border-radius: 50%;
+    }
+    .key-business {
+        width: 6px;
+        height: 6px;
+        background: orange;
+        display: inline-block;
+        border-radius: 50%;
+    }
+    .key-buyout {
+        width: 6px;
+        height: 6px;
+        background: turquoise;
+        display: inline-block;
+        border-radius: 50%;
+    }
 }
 .trend-container {
     display: table;
@@ -49,11 +98,16 @@ body {
     }
     h1 {
         font-weight: 900;
-        font-size: 5em;
+        font-size: 3.5em;
         color: #ffa884;
         margin-bottom: 0.5em;
-        margin-top: -2.2em;
-        line-height: 1.35em;
+        margin-top: -4.65em;
+        line-height: 1.25em;
+
+        span {
+            background: #292c40;
+            padding: 0 0.5em;
+        }
     }
 }
 .graph-cell {
@@ -72,14 +126,24 @@ body {
     }
 }
 .graph-row {
-    width: 100%;
 
     h2 {
         font-size: 1.1em;
         font-weight: 900;
-        border-top: 2px solid;
-        padding-top: .5em;
-        margin: 2em .5em 1.5em 0;
+        border-top: 1px solid;
+        padding-top: 0.5em;
+        margin: 2em 0.5em 1.5em 0;
+    }
+    .empty-state {
+        font-size: 1.5em;
+        font-weight: 900;
+        fill: #fff;
+    }
+    .row-label {
+        border-width: 8px;
+        font-size: 4em;
+        margin-bottom: 0.1em;
+        margin-right: 0.1em;
     }
 }
 // .trees {
