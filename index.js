@@ -255,7 +255,7 @@ function drawWater(svg, centroid) {
 
         var center = centroid;
         var scale  = 300000;
-        var offset = [w/1.6, h/2.6];
+        var offset = [w/1.6, h/2.3];
         var proj = d3.geoMercator().scale(scale).center(center).translate(offset);
 
         // create the path
@@ -311,7 +311,7 @@ function drawMap() {
 
         var center = d3.geoCentroid(featureCollection)
         var scale  = 300000;
-        var offset = [w/1.6, h/2.6];
+        var offset = [w/1.6, h/2.3];
         var proj = d3.geoMercator().scale(scale).center(center).translate(offset);
 
         // create the path
@@ -988,6 +988,7 @@ var neighborhoods = [
         "Twin Peaks",
         "Visitacion Valley",
         "Marina",
+        "Mission",
         "Bayview Hunters Point",
         "Inner Sunset",
         "Lone Mountain/USF",
