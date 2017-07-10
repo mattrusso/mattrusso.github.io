@@ -784,7 +784,7 @@ function mapDrawEvictions(svg, year, proj) {
 }
 
 // testing if functions are called twice if map is not drawn
-// drawMap()
+drawMap()
 
 function drawBuyouts() {
     var maxLeafLength = 0;
