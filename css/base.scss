@@ -22,7 +22,7 @@ body {
     width: 25em;
     position: absolute;
     left: 4em;
-    top: 6em;
+    top: 2em;
     padding: 1em 1em;
 
     select {
@@ -31,15 +31,24 @@ body {
         margin: 1em 0;
         background: transparent;
         border-color: #ffa884;
+        color: #ffa884;
+    }
+    .key-title {
+        color: #292c40;
+        font-size: .95em;
+        margin-top: -1.5em;
+        margin-bottom: .5em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
     }
     .key-rows {
-        color: #ccc;
+        color: #ffa884;
         font-weight: 900;
         font-size: 1.1em;
         padding: 0 15px
     }
     .key-row {
-        border-top: 1px solid #ccc;
+        border-top: 1px solid #ffa884;
         margin-bottom: 2.5em;
 
         div {
@@ -63,25 +72,140 @@ body {
         border: 2px solid red;
     }
     .key-petition {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         background: yellow;
         display: inline-block;
         border-radius: 50%;
     }
     .key-business {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height:  8px;
         background: orange;
         display: inline-block;
         border-radius: 50%;
     }
     .key-buyout {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         background: turquoise;
         display: inline-block;
         border-radius: 50%;
+    }
+    .key-subheader {
+    color: #ffa884;
+    padding: 0.35em 0;
+    margin: -0.5em 0 -0.7em;
+    }
+    // hide default crossbrowser slider styles
+    input[type=range] {
+        position: relative;
+        z-index: 2;
+        -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+        width: 100%; /* Specific width is required for Firefox. */
+        background: transparent; /* Otherwise white in Chrome */
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    input[type=range]:focus {
+        outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+
+    input[type=range]::-ms-track {
+        width: 100%;
+        cursor: pointer;
+
+        /* Hides the slider so custom styles can be added */
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+
+    /* Special styling for WebKit/Blink */
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+        // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+    }
+
+    /* All the same stuff for Firefox */
+    input[type=range]::-moz-range-thumb {
+        // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: none;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    /* All the same stuff for IE */
+    input[type=range]::-ms-thumb {
+        // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+        border: none;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+    }
+    .slider {
+        position: relative;
+
+        hr {
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: 0;
+            border-color: #292c40;
+            border-width: 2px;
+        }
+    }
+    .tree-row {
+        margin: -15px;
+        margin-bottom: 1.15em;
+        padding: 15px;
+        padding-top: 2.5em;
+        background: #ffa884;
+        padding-bottom: 0.35em;
+
+        .key-row {
+            border-top: 5px solid #292c40;
+            color: #292c40;
+            font-size: 2.2em;
+            font-weight: 900;
+            margin-bottom: 1.65em;
+
+            div {
+                padding: 0.15em 0 0 0;
+            }
+        }
+        .key-tree {
+            width: 0.75em;
+            height: 0.75em;
+            background: rgba(144, 238, 144, 0.35);
+            display: inline-block;
+            border-radius: 50%;
+            border: 2px solid springgreen;
+        }
+        .number-row {
+            font-size: 1.5em;
+            color: #292c40;
+            padding: 0.5em 0 0.25em;
+        }
+        #tree-year {
+            font-weight: 900;
+        }
     }
 }
 .trend-container {
@@ -126,6 +250,7 @@ body {
     }
 }
 .graph-row {
+    padding: 0 2em;
 
     h2 {
         font-size: 1.1em;
@@ -146,9 +271,10 @@ body {
         margin-right: 0.1em;
     }
 }
-// .trees {
-//     transform: translate(30%, 10%) scale(.82);
-// }
+.neighborhood-row {
+    display: table;
+    width: 100%;
+}
 @media (max-width: 769px) {
 
     .trend-container {

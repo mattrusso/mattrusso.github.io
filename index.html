@@ -6,7 +6,37 @@
 <body>
     <div id="map" class="mapholder">
         <div class="key-container">
+            <div class="tree-row">
+                <div class="key-title">
+                    Key
+                </div>
+                <div class="key-row">
+                    <div class="col-xs-9">
+                        Tree
+                    </div>
+                    <div class="col-xs-3 text-right">
+                        <div class="key-tree"></div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <input id="year-slider" type="range" min="2000" max="2016" step="1"/>
+                    <hr></hr>
+                </div>
+                <div class="number-row row">
+                    <div id="tree-year" class="col-xs-9">
+                    </div>
+                    <div id="tree-number" class="col-xs-3 text-right">
+                    </div>
+                </div>
+            </div>
+            <div class="key-title key-subheader">
+                Other Items:
+            </div>
             <select id="map-year">
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                <option value="2003">2003</option>
                 <option value="2004">2004</option>
                 <option value="2005">2005</option>
                 <option value="2006">2006</option>
@@ -22,14 +52,6 @@
                 <option selected="selected" value="2016">2016</option>
             </select>
             <div class="row key-rows">
-                <div class="key-row">
-                    <div class="col-xs-9">
-                        Tree
-                    </div>
-                    <div class="col-xs-3 text-right">
-                        <div class="key-tree"></div>
-                    </div>
-                </div>
                 <div class="key-row">
                     <div class="col-xs-9">
                         Eviction Notice
@@ -67,22 +89,41 @@
     </div>
     <div class="trend-container">
         <h1>
-            <span>San Francisco</span><br/><span>Data Visualization</span></br><span>&</span><br/>Neighborhood Trends
+            <span>San Francisco</span><br/><span>Data Visualization</span></br><span>&</span><br/><span>Neighborhood Trends</span>
         </h1>
-        <div class="row">
-            <div class="col-xs-6 col-sm-3">
-                <select id="min-year">
-                    <option selected="selected" value="2009">2009</option>
-                    <option value="2010">2010</option>
-                    <option value="2011">2011</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                </select>
-            </div>
-            <div class="col-xs-6 col-sm-3">
-                <select id="max-year">
+        <div id="graphs" class="graph-row">
+            <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <select id="min-year">
+                        <option selected="selected" value="2000">2000</option>
+                        <option value="2001">2001</option>
+                        <option value="2002">2002</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <select id="max-year">
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
                     <option value="2010">2010</option>
                     <option value="2011">2011</option>
                     <option value="2012">2012</option>
@@ -90,10 +131,9 @@
                     <option value="2014">2014</option>
                     <option value="2015">2015</option>
                     <option selected="selected" value="2016">2016</option>
-                </select>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div id="graphs" class="graph-row">
         </div>
     </div>
     <script type="text/javascript" src="bundle.js" charset="utf-8"></script>

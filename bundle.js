@@ -89,26 +89,46 @@ __webpack_require__(9);
 var minDate = d3.select("#min-year").node().value;
 var maxDate = d3.select("#max-year").node().value;
 
+var years = [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016];
+
 d3.select("#min-year").on("change", function () {
-    d3.selectAll("div.graph-cell").remove();
     minDate = d3.select("#min-year").node().value;
+    d3.select("#max-year").selectAll("option").remove();
+
+    var yearIdx = years.indexOf(parseFloat(minDate));
+    var maxYearIdx = years.indexOf(parseFloat(maxDate));
+
+    for (var i = yearIdx + 1; i < years.length; i++) {
+        if (i == maxYearIdx) {
+            d3.select("#max-year").append("option").attr("selected", "selected").attr("value", years[i]).html(years[i]);
+        } else {
+            d3.select("#max-year").append("option").attr("value", years[i]).html(years[i]);
+        }
+    }
+
     updateTrends();
 });
 d3.select("#max-year").on("change", function () {
-    d3.selectAll("div.graph-cell").remove();
     maxDate = d3.select("#max-year").node().value;
+
+    d3.select("#min-year").selectAll("option").remove();
+
+    var yearIdx = years.indexOf(parseFloat(maxDate));
+    var minYearIdx = years.indexOf(parseFloat(minDate));
+
+    for (var i = 0; i < yearIdx; i++) {
+        if (i == minYearIdx) {
+            d3.select("#min-year").append("option").attr("selected", "selected").attr("value", years[i]).html(years[i]);
+        } else {
+            d3.select("#min-year").append("option").attr("value", years[i]).html(years[i]);
+        }
+    }
+
     updateTrends();
 });
 
-window.addEventListener("resize", function () {
-    d3.selectAll("div.graph-cell").remove();
-});
-
 function updateTrends() {
-    drawBuyouts();
-    drawEvictions();
-    drawPetitionsNeighorhood();
-    drawCarshareNeighborhood();
+    drawNeighborhoodContainers(neighborhoods);
 }
 
 // calling data and then calling draw
@@ -385,7 +405,7 @@ function drawMap() {
 
             var year = d3.select("#map-year").node().value;
             svg1.selectAll("circle").remove();
-            drawTrees(svg, year, proj);
+            // drawTrees(svg, year, proj);
             drawBusinesses(svg, year, proj);
             drawPetitions(svg, year, proj);
             drawBuyOuts(svg, year, proj);
@@ -402,7 +422,7 @@ function drawMap() {
 
 function drawTrees(svg, year, proj) {
 
-    d3.csv('/../data/Street_Tree_List.csv', function (data) {
+    d3.csv('/../data/Street_Tree_List_Edited.csv', function (data) {
         var nested_data = d3.nest().key(function (d) {
             var date = d.PlantDate.split("/");
             var last = date.length - 1;
@@ -425,10 +445,10 @@ function drawTrees(svg, year, proj) {
 
         var points = g.selectAll("circle").data(nested_data[0].values);
 
-        points.enter().append("circle").attr("r", 4).attr("class", function (d) {
+        points.enter().append("circle").attr("class", function (d) {
             var className = d.qAddress;
-            return className;
-        }).attr("cx", function (d) {
+            return "tree";
+        }).attr("r", 0).attr("cx", function (d) {
             // get lat and long points
             var longitude = parseFloat(d.Longitude);
             var latitude = parseFloat(d.Latitude);
@@ -454,19 +474,32 @@ function drawTrees(svg, year, proj) {
                 coord = -10;
             }
             return coord;
-        }).attr("fill", "lightgreen").attr("stroke", "springgreen").style("fill-opacity", .2).style("stroke-opacity", .7);
+        }).attr("fill", "lightgreen").attr("stroke", "springgreen").style("fill-opacity", .2).style("stroke-opacity", .7).transition().duration(500).attr("r", 4);
 
         points.exit().remove();
 
         function isNan(value) {
             return Number.isNaN(Number(value));
         }
+
+        var yearVal = d3.select("#year-slider").node().value;
+        var treeNumber = nested_data[0].values.length;
+        d3.select("#tree-year").html(yearVal);
+        d3.select("#tree-number").html(treeNumber);
+
+        d3.select("#year-slider").on("change", function () {
+            svg.selectAll(".tree").transition().duration(500).attr("r", 0).remove();
+
+            var newYearVal = d3.select("#year-slider").node().value;
+
+            drawTrees(svg, newYearVal, proj);
+        });
     });
 }
 
 function drawBusinesses(svg, year, proj) {
 
-    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco.csv', function (data) {
+    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco_Edited.csv', function (data) {
         var nested_data = d3.nest().key(function (d) {
             var date = d.Business_Start_Date.split("/");
             var last = date.length - 1;
@@ -826,7 +859,7 @@ function drawPetitionsNeighorhood() {
 function drawCarshareNeighborhood() {
     var maxLeafLength = 0;
 
-    d3.csv('/../data/Carshare_Onstreet.csv', function (data) {
+    d3.csv('/../data/D3_Encampments.csv', function (data) {
         var nested_data = d3.nest().key(function (d) {
             if (d.Neighborhood != "") {
 
@@ -835,9 +868,10 @@ function drawCarshareNeighborhood() {
                 return "Unknown Neighborhood";
             }
         }).key(function (d) {
-            var date = d.Operational_Date.split("/");
+            var date = d.Opened.split("/");
             var last = date.length - 1;
-            var year = parseFloat(date[last]);
+            var date2 = date[last].split(" ");
+            var year = parseFloat(date2[0]);
             return year;
         }).sortKeys(d3.ascending).rollup(function (leaves) {
             maxLeafLength = maxLeafLength > leaves.length ? maxLeafLength : leaves.length;
@@ -865,7 +899,7 @@ function getMaxFromLeaves(arr) {
 function testdraw() {
     var maxLeafLength = 0;
 
-    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco.csv', function (data) {
+    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco_Edited.csv', function (data) {
         var nested_data = d3.nest().key(function (d) {
             if (d.Neighborhoods_Analysis_Boundaries != "") {
 
@@ -898,6 +932,8 @@ function testdraw() {
 var neighborhoods = ["Duboce Triangle", "Dogpatch", "Outer Sunset", "Golden Gate Park", "Treasure Island", "Sunset/Parkside", "Lakeshore/Oceanview/Merced/Ingleside", "Nob Hill", "South of Market", "Noe Valley", "Russian Hill", "Inner Richmond", "Financial District/South Beach", "West of Twin Peaks", "Glen Park", "Twin Peaks", "Visitacion Valley", "Marina", "Mission", "Bayview Hunters Point", "Inner Sunset", "Lone Mountain/USF", "North Beach", "Portola", "Western Addition", "Castro/Upper Market", "Excelsior", "Pacific Heights", "Outer Mission", "Outer Richmond", "Presidio Heights", "Japantown", "Seacliff", "Haight Ashbury", "Bernal Heights", "Chinatown", "Tenderloin", "Hayes Valley"].sort();
 
 function drawNeighborhoodContainers(arrNeighborhood) {
+    d3.selectAll(".neighborhood-row").remove();
+
     for (var i = 0; i < arrNeighborhood.length; i++) {
         var neighborhood = arrNeighborhood[i];
 
@@ -907,7 +943,7 @@ function drawNeighborhoodContainers(arrNeighborhood) {
         var rowIdSelector = "#" + neighborhoodId;
 
         d3.selectAll(rowIdSelector).remove();
-        d3.select("#graphs").append("div").attr("id", neighborhoodId).attr("class", "neighborhood-row row");
+        d3.select("#graphs").append("div").attr("id", neighborhoodId).attr("class", "neighborhood-row");
 
         d3.select(rowIdSelector).append("h2").html(neighborhood).attr("class", "row-label");
 
@@ -1966,7 +2002,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  width: 100%;\n  height: 100%; }\n\n#map {\n  width: 100%;\n  height: 100%; }\n\nbody {\n  background: #292c40;\n  color: #ffa884;\n  -webkit-font-smoothing: antialiased; }\n\n.line {\n  fill: none;\n  stroke: #fff;\n  stroke-width: 3px; }\n\n.key-container {\n  background: #292c40;\n  width: 25em;\n  position: absolute;\n  left: 4em;\n  top: 6em;\n  padding: 1em 1em; }\n  .key-container select {\n    width: 100%;\n    font-size: 1.2em;\n    margin: 1em 0;\n    background: transparent;\n    border-color: #ffa884; }\n  .key-container .key-rows {\n    color: #ccc;\n    font-weight: 900;\n    font-size: 1.1em;\n    padding: 0 15px; }\n  .key-container .key-row {\n    border-top: 1px solid #ccc;\n    margin-bottom: 2.5em; }\n    .key-container .key-row div {\n      padding: 0.5em 0 0 0; }\n  .key-container .key-tree {\n    width: 13px;\n    height: 13px;\n    background: rgba(144, 238, 144, 0.35);\n    display: inline-block;\n    border-radius: 50%;\n    border: 2px solid springgreen; }\n  .key-container .key-eviction {\n    width: 13px;\n    height: 13px;\n    background: rgba(255, 0, 0, 0.34);\n    display: inline-block;\n    border-radius: 50%;\n    border: 2px solid red; }\n  .key-container .key-petition {\n    width: 6px;\n    height: 6px;\n    background: yellow;\n    display: inline-block;\n    border-radius: 50%; }\n  .key-container .key-business {\n    width: 6px;\n    height: 6px;\n    background: orange;\n    display: inline-block;\n    border-radius: 50%; }\n  .key-container .key-buyout {\n    width: 6px;\n    height: 6px;\n    background: turquoise;\n    display: inline-block;\n    border-radius: 50%; }\n\n.trend-container {\n  display: table;\n  width: 100%;\n  padding: 4em; }\n  .trend-container select {\n    width: 100%;\n    font-size: 1.2em;\n    margin: 1em 0;\n    background: transparent;\n    border-color: #ffa884; }\n  .trend-container h1 {\n    font-weight: 900;\n    font-size: 3.5em;\n    color: #ffa884;\n    margin-bottom: 0.5em;\n    margin-top: -4.65em;\n    line-height: 1.25em; }\n    .trend-container h1 span {\n      background: #292c40;\n      padding: 0 0.5em; }\n\n.graph-cell {\n  padding: 0; }\n  .graph-cell svg {\n    background: #1a1c29; }\n  .graph-cell .axis text {\n    fill: #696969; }\n  .graph-cell .axis line, .graph-cell .axis path {\n    stroke: #696969; }\n\n.graph-row h2 {\n  font-size: 1.1em;\n  font-weight: 900;\n  border-top: 1px solid;\n  padding-top: 0.5em;\n  margin: 2em 0.5em 1.5em 0; }\n\n.graph-row .empty-state {\n  font-size: 1.5em;\n  font-weight: 900;\n  fill: #fff; }\n\n.graph-row .row-label {\n  border-width: 8px;\n  font-size: 4em;\n  margin-bottom: 0.1em;\n  margin-right: 0.1em; }\n\n@media (max-width: 769px) {\n  .trend-container {\n    padding: 4em .75em 4em 1em; } }\n", ""]);
+exports.push([module.i, "html,\nbody {\n  width: 100%;\n  height: 100%; }\n\n#map {\n  width: 100%;\n  height: 100%; }\n\nbody {\n  background: #292c40;\n  color: #ffa884;\n  -webkit-font-smoothing: antialiased; }\n\n.line {\n  fill: none;\n  stroke: #fff;\n  stroke-width: 3px; }\n\n.key-container {\n  background: #292c40;\n  width: 25em;\n  position: absolute;\n  left: 4em;\n  top: 2em;\n  padding: 1em 1em;\n  /* Special styling for WebKit/Blink */\n  /* All the same stuff for Firefox */\n  /* All the same stuff for IE */ }\n  .key-container select {\n    width: 100%;\n    font-size: 1.2em;\n    margin: 1em 0;\n    background: transparent;\n    border-color: #ffa884;\n    color: #ffa884; }\n  .key-container .key-title {\n    color: #292c40;\n    font-size: .95em;\n    margin-top: -1.5em;\n    margin-bottom: .5em;\n    letter-spacing: .1em;\n    text-transform: uppercase; }\n  .key-container .key-rows {\n    color: #ffa884;\n    font-weight: 900;\n    font-size: 1.1em;\n    padding: 0 15px; }\n  .key-container .key-row {\n    border-top: 1px solid #ffa884;\n    margin-bottom: 2.5em; }\n    .key-container .key-row div {\n      padding: 0.5em 0 0 0; }\n  .key-container .key-tree {\n    width: 13px;\n    height: 13px;\n    background: rgba(144, 238, 144, 0.35);\n    display: inline-block;\n    border-radius: 50%;\n    border: 2px solid springgreen; }\n  .key-container .key-eviction {\n    width: 13px;\n    height: 13px;\n    background: rgba(255, 0, 0, 0.34);\n    display: inline-block;\n    border-radius: 50%;\n    border: 2px solid red; }\n  .key-container .key-petition {\n    width: 8px;\n    height: 8px;\n    background: yellow;\n    display: inline-block;\n    border-radius: 50%; }\n  .key-container .key-business {\n    width: 8px;\n    height: 8px;\n    background: orange;\n    display: inline-block;\n    border-radius: 50%; }\n  .key-container .key-buyout {\n    width: 8px;\n    height: 8px;\n    background: turquoise;\n    display: inline-block;\n    border-radius: 50%; }\n  .key-container .key-subheader {\n    color: #ffa884;\n    padding: 0.35em 0;\n    margin: -0.5em 0 -0.7em; }\n  .key-container input[type=range] {\n    position: relative;\n    z-index: 2;\n    -webkit-appearance: none;\n    /* Hides the slider so that custom slider can be made */\n    width: 100%;\n    /* Specific width is required for Firefox. */\n    background: transparent;\n    /* Otherwise white in Chrome */ }\n  .key-container input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none; }\n  .key-container input[type=range]:focus {\n    outline: none;\n    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */ }\n  .key-container input[type=range]::-ms-track {\n    width: 100%;\n    cursor: pointer;\n    /* Hides the slider so custom styles can be added */\n    background: transparent;\n    border-color: transparent;\n    color: transparent; }\n  .key-container input[type=range]::-webkit-slider-thumb {\n    -webkit-appearance: none;\n    border: none;\n    height: 25px;\n    width: 25px;\n    border-radius: 50%;\n    background: #ffffff;\n    cursor: pointer; }\n  .key-container input[type=range]::-moz-range-thumb {\n    border: none;\n    height: 25px;\n    width: 25px;\n    border-radius: 50%;\n    background: #ffffff;\n    cursor: pointer; }\n  .key-container input[type=range]::-ms-thumb {\n    border: none;\n    height: 25px;\n    width: 25px;\n    border-radius: 50%;\n    background: #ffffff;\n    cursor: pointer; }\n  .key-container .slider {\n    position: relative; }\n    .key-container .slider hr {\n      z-index: 1;\n      position: absolute;\n      top: 50%;\n      left: 0;\n      right: 0;\n      margin: 0;\n      border-color: #292c40;\n      border-width: 2px; }\n  .key-container .tree-row {\n    margin: -15px;\n    margin-bottom: 1.15em;\n    padding: 15px;\n    padding-top: 2.5em;\n    background: #ffa884;\n    padding-bottom: 0.35em; }\n    .key-container .tree-row .key-row {\n      border-top: 5px solid #292c40;\n      color: #292c40;\n      font-size: 2.2em;\n      font-weight: 900;\n      margin-bottom: 1.65em; }\n      .key-container .tree-row .key-row div {\n        padding: 0.15em 0 0 0; }\n    .key-container .tree-row .key-tree {\n      width: 0.75em;\n      height: 0.75em;\n      background: rgba(144, 238, 144, 0.35);\n      display: inline-block;\n      border-radius: 50%;\n      border: 2px solid springgreen; }\n    .key-container .tree-row .number-row {\n      font-size: 1.5em;\n      color: #292c40;\n      padding: 0.5em 0 0.25em; }\n    .key-container .tree-row #tree-year {\n      font-weight: 900; }\n\n.trend-container {\n  display: table;\n  width: 100%;\n  padding: 4em; }\n  .trend-container select {\n    width: 100%;\n    font-size: 1.2em;\n    margin: 1em 0;\n    background: transparent;\n    border-color: #ffa884; }\n  .trend-container h1 {\n    font-weight: 900;\n    font-size: 3.5em;\n    color: #ffa884;\n    margin-bottom: 0.5em;\n    margin-top: -4.65em;\n    line-height: 1.25em; }\n    .trend-container h1 span {\n      background: #292c40;\n      padding: 0 0.5em; }\n\n.graph-cell {\n  padding: 0; }\n  .graph-cell svg {\n    background: #1a1c29; }\n  .graph-cell .axis text {\n    fill: #696969; }\n  .graph-cell .axis line, .graph-cell .axis path {\n    stroke: #696969; }\n\n.graph-row {\n  padding: 0 2em; }\n  .graph-row h2 {\n    font-size: 1.1em;\n    font-weight: 900;\n    border-top: 1px solid;\n    padding-top: 0.5em;\n    margin: 2em 0.5em 1.5em 0; }\n  .graph-row .empty-state {\n    font-size: 1.5em;\n    font-weight: 900;\n    fill: #fff; }\n  .graph-row .row-label {\n    border-width: 8px;\n    font-size: 4em;\n    margin-bottom: 0.1em;\n    margin-right: 0.1em; }\n\n.neighborhood-row {\n  display: table;\n  width: 100%; }\n\n@media (max-width: 769px) {\n  .trend-container {\n    padding: 4em .75em 4em 1em; } }\n", ""]);
 
 // exports
 

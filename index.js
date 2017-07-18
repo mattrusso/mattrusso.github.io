@@ -7,29 +7,47 @@ require("./css/base.scss");
 var minDate = d3.select("#min-year").node().value;
 var maxDate = d3.select("#max-year").node().value;
 
+var years = [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016];
 
 d3.select("#min-year").on("change", function() {
-    d3.selectAll("div.graph-cell").remove();
     minDate = d3.select("#min-year").node().value;
+    d3.select("#max-year").selectAll("option").remove()
+
+    var yearIdx = years.indexOf(parseFloat(minDate));
+    var maxYearIdx = years.indexOf(parseFloat(maxDate));
+
+    for (var i = yearIdx + 1; i < years.length; i++) {
+        if(i == maxYearIdx) {
+            d3.select("#max-year").append("option").attr("selected", "selected").attr("value", years[i]).html(years[i]);
+        } else {
+            d3.select("#max-year").append("option").attr("value", years[i]).html(years[i]);
+        }
+    }
+
     updateTrends()
 });
 d3.select("#max-year").on("change", function() {
-    d3.selectAll("div.graph-cell").remove();
     maxDate = d3.select("#max-year").node().value;
+
+    d3.select("#min-year").selectAll("option").remove()
+
+    var yearIdx = years.indexOf(parseFloat(maxDate));
+    var minYearIdx = years.indexOf(parseFloat(minDate));
+
+    for (var i = 0; i < yearIdx; i++) {
+        if(i == minYearIdx) {
+            d3.select("#min-year").append("option").attr("selected", "selected").attr("value", years[i]).html(years[i]);
+        } else {
+            d3.select("#min-year").append("option").attr("value", years[i]).html(years[i]);
+        }
+    }
+
     updateTrends()
 });
 
-window.addEventListener("resize", function() {
-    d3.selectAll("div.graph-cell").remove();
-});
-
 function updateTrends() {
-    drawBuyouts();
-    drawEvictions();
-    drawPetitionsNeighorhood();
-    drawCarshareNeighborhood();
+    drawNeighborhoodContainers(neighborhoods);
 }
-
 
 // calling data and then calling draw
 function drawTrends() {
@@ -366,7 +384,7 @@ function drawMap() {
 
             var year = d3.select("#map-year").node().value;
             svg1.selectAll("circle").remove()
-            drawTrees(svg, year, proj);
+            // drawTrees(svg, year, proj);
             drawBusinesses(svg, year, proj);
             drawPetitions(svg, year, proj);
             drawBuyOuts(svg, year, proj);
@@ -386,7 +404,7 @@ function drawMap() {
 
 function drawTrees(svg, year, proj) {
 
-    d3.csv('/../data/Street_Tree_List.csv', function(data) {
+    d3.csv('/../data/Street_Tree_List_Edited.csv', function(data) {
         var nested_data = d3.nest().key(function(d) {
             var date = d.PlantDate.split("/")
             var last = date.length - 1;
@@ -412,11 +430,11 @@ function drawTrees(svg, year, proj) {
             .data(nested_data[0].values);
 
         points.enter().append("circle")
-            .attr("r", 4)
             .attr("class", function(d) {
                 var className = d.qAddress;
-                return className;
+                return "tree";
             })
+            .attr("r", 0)
             .attr("cx", function(d) {
                 // get lat and long points
                 var longitude = parseFloat(d.Longitude)
@@ -448,7 +466,10 @@ function drawTrees(svg, year, proj) {
             .attr("fill", "lightgreen")
             .attr("stroke", "springgreen")
             .style("fill-opacity", .2)
-            .style("stroke-opacity", .7);
+            .style("stroke-opacity", .7)
+            .transition()
+            .duration(500)
+            .attr("r", 4);
 
         points.exit().remove()
 
@@ -456,13 +477,33 @@ function drawTrees(svg, year, proj) {
             return Number.isNaN(Number(value));
         }
 
+        var yearVal = d3.select("#year-slider").node().value;
+        var treeNumber = nested_data[0].values.length;
+        d3.select("#tree-year").html(yearVal);
+        d3.select("#tree-number").html(treeNumber);
+
+
+        d3.select("#year-slider").on("change", function() {
+            svg.selectAll(".tree")
+            .transition()
+            .duration(500)
+            .attr("r", 0)
+            .remove();
+
+            var newYearVal = d3.select("#year-slider").node().value;
+
+            drawTrees(svg, newYearVal, proj);
+
+        });
+
+
     });
 
 }
 
 function drawBusinesses(svg, year, proj) {
 
-    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco.csv', function(data) {
+    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco_Edited.csv', function(data) {
         var nested_data = d3.nest()
         .key(function(d) {
             var date = d.Business_Start_Date.split("/")
@@ -889,7 +930,7 @@ function drawPetitionsNeighorhood() {
 function drawCarshareNeighborhood() {
         var maxLeafLength = 0;
 
-        d3.csv('/../data/Carshare_Onstreet.csv', function(data) {
+        d3.csv('/../data/D3_Encampments.csv', function(data) {
         var nested_data = d3.nest()
         .key(function(d) {
             if(d.Neighborhood != "") {
@@ -900,9 +941,10 @@ function drawCarshareNeighborhood() {
             }
         })
         .key(function(d) {
-            var date = d.Operational_Date.split("/")
+            var date = d.Opened.split("/")
             var last = date.length - 1;
-            var year = parseFloat(date[last]);
+            var date2 = date[last].split(" ")
+            var year = parseFloat(date2[0]);
             return year; })
         .sortKeys(d3.ascending)
         .rollup(function(leaves) {
@@ -933,7 +975,7 @@ function getMaxFromLeaves(arr) {
 function testdraw() {
         var maxLeafLength = 0
 
-        d3.csv('/../data/Registered_Business_Locations_-_San_Francisco.csv', function(data) {
+        d3.csv('/../data/Registered_Business_Locations_-_San_Francisco_Edited.csv', function(data) {
         var nested_data = d3.nest()
         .key(function(d) {
             if(d.Neighborhoods_Analysis_Boundaries != "") {
@@ -1012,6 +1054,8 @@ var neighborhoods = [
     ].sort()
 
 function drawNeighborhoodContainers(arrNeighborhood) {
+    d3.selectAll(".neighborhood-row").remove();
+
     for(var i = 0; i < arrNeighborhood.length; i++) {
         var neighborhood = arrNeighborhood[i]
 
@@ -1021,7 +1065,7 @@ function drawNeighborhoodContainers(arrNeighborhood) {
         var rowIdSelector = "#"+neighborhoodId;
 
         d3.selectAll(rowIdSelector).remove();
-        d3.select("#graphs").append("div").attr("id", neighborhoodId).attr("class", "neighborhood-row row");
+        d3.select("#graphs").append("div").attr("id", neighborhoodId).attr("class", "neighborhood-row");
 
         d3.select(rowIdSelector).append("h2").html(neighborhood).attr("class", "row-label");
 
