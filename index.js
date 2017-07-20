@@ -49,135 +49,6 @@ function updateTrends() {
     drawNeighborhoodContainers(neighborhoods);
 }
 
-// calling data and then calling draw
-function drawTrends() {
-
-    d3.csv('/../data/Carshare_Onstreet.csv', function(data) {
-        var nested_data = d3.nest()
-        .key(function(d) {
-            var date = d.Operational_Date.split("/")
-            var last = date.length - 1;
-            var year = parseFloat(date[last]);
-            return year; })
-        .sortKeys(d3.ascending)
-        .rollup(function(leaves) { return leaves.length; })
-        .entries(data);
-
-        drawGraph(nested_data, "Onstreet Carshare Stations", "carshare")
-
-    });
-
-    d3.csv('/../data/Buyout_agreements.csv', function(data) {
-
-        var nested_data = d3.nest()
-        .key(function(d) {
-            if(d.Date != "") {
-                var date = d.Date.split("/")
-                var last = date.length - 1;
-                var year = parseFloat(date[last]);
-
-                return year;
-
-            } else if(d.Pre_Buyout_Disclosure_Date != "") {
-                var date = d.Pre_Buyout_Disclosure_Date.split("/")
-                var last = date.length - 1;
-                var year = parseFloat(date[last]);
-
-                return year;
-
-            } else {
-                return null;
-            }
-        })
-        .sortKeys(d3.ascending)
-        .rollup(function(leaves) { return leaves.length; })
-        .entries(data);
-
-        drawGraph(nested_data,"Buyout Agreements", "buyout")
-    });
-
-    d3.csv('/../data/Count_of_Eviction_Notices_By_Analysis_Neighborhood_and_Year.csv', function(data) {
-        var nested_data = d3.nest()
-        .key(function(d) {
-            var dateTime = d.File_Year.split(" ");
-            var date = dateTime[0];
-            date = date.split("/")
-            var last = date.length - 1;
-            var year = parseFloat(date[last]);
-            return year; })
-        .sortKeys(d3.ascending)
-        .rollup(function(leaves) { 
-            var sum = d3.sum(leaves, function(d) {return d.Count_of_Eviction_Notices});
-            return sum; 
-        })
-        .entries(data);
-
-        drawGraph(nested_data, "Eviction Notices", "eviction")
-
-    });
-
-    d3.csv('/../data/Appeals_to_the_Rent_Board.csv', function(data) {
-        var nested_data = d3.nest()
-        .key(function(d) {
-            var date = d.Date_Filed.split("/")
-            var last = date.length - 1;
-            var year = parseFloat(date[last]);
-            return year; })
-        .sortKeys(d3.ascending)
-        .rollup(function(leaves) { return leaves.length; })
-        .entries(data);
-
-        drawGraph(nested_data, "Appeals to the Rent Board", "rent")
-
-    });
-
-    d3.csv('/../data/Registered_Business_Locations_-_San_Francisco.csv', function(data) {
-        var nested_data = d3.nest()
-        .key(function(d) {
-            var date = d.Location_Start_Date.split("/")
-            var last = date.length - 1;
-            var year = parseFloat(date[last]);
-            if(year >= 2000) {
-                return year
-            } else {
-                return 0; 
-            }
-        })
-        .sortKeys(d3.ascending)
-        .rollup(function(leaves) { return leaves.length; })
-        .entries(data);
-
-        nested_data.splice(0, 1)
-
-        drawGraph(nested_data, "Newly Registered Businesses", "business")
-
-    });
-
-    d3.csv('/../data/Street_Tree_List.csv', function(data) {
-        var nested_data = d3.nest()
-        .key(function(d) {
-            var dateTime = d.PlantDate.split(" ");
-            var date = dateTime[0];
-            date = date.split("/")
-            var last = date.length - 1;
-            var year = parseFloat(date[last]);
-            if(year >= 2000) {
-                return year
-            } else {
-                return 0; 
-            }
-        })
-        .sortKeys(d3.ascending)
-        .rollup(function(leaves) { return leaves.length; })
-        .entries(data);
-
-        nested_data.splice(0, 1)
-
-        drawGraph(nested_data, "Newly Planted Trees", "trees")
-
-    });
-}
-
 function drawGraph(data, title, id) {
 
     var containerId = "graph-" + id;
@@ -312,6 +183,7 @@ function drawMap() {
         var svg1 = d3.select("#map").append("svg")
         .attr("width", "100%")
         .attr("height", "100%")
+        .attr("class", "map-svg")
         .style("background", "#C2EDEB");
 
         var svg = svg1.append("g");
@@ -379,7 +251,6 @@ function drawMap() {
             .attr("fill", "#535353");
 
         drawWater(svg, center)
-
         d3.select("#map-year").on("change", function() {
 
             var year = d3.select("#map-year").node().value;
@@ -397,9 +268,107 @@ function drawMap() {
         drawPetitions(svg1, 2016, proj);
         drawBuyOuts(svg1, 2016, proj);
         mapDrawEvictions(svg1, 2016, proj);
+        drawNeighborhoods(svg, proj)
 
     });
 }
+
+function drawNeighborhoods(svg, proj) {
+
+    d3.json("/../data/test_neighb.json", function(error, data) {
+
+        var nested_data = d3.nest().key(function(d) {return d[10];})
+        .sortKeys(d3.ascending)
+        .entries(data.data);
+
+        var test = nested_data[0].values[0][9].split("(((")[1].split(")))")[0].split(",");
+
+        var pointsString = ""
+        for(var i = 0; i < test.length; i++) {
+            var points = test[i].split(" ")
+            if ( i > 0) {
+                var longitude = parseFloat(points[1]);
+                var latitude = parseFloat(points[2]);
+            } else {
+                var longitude = parseFloat(points[0]);
+                var latitude = parseFloat(points[1]);
+            }
+            var p = proj([longitude,latitude]);
+            var string = " " + p[0] + " " + p[1];
+            pointsString = pointsString + string;
+        }
+
+        var poly = svg.selectAll("polygon")
+            .data(nested_data);
+
+        poly.enter().append("polygon")
+            .attr("class", "lol")
+            .attr("points", function(d) {
+                var pointsArray = d.values[0][9].split("(((")[1].split(")))")[0].split(",")
+                var pointsString = ""
+                for(var i = 0; i < pointsArray.length; i++) {
+                    var points = pointsArray[i].split(" ")
+                    if ( i > 0) {
+                        var longitude = parseFloat(points[1]);
+                        var latitude = parseFloat(points[2]);
+                    } else {
+                        var longitude = parseFloat(points[0]);
+                        var latitude = parseFloat(points[1]);
+                    }
+                    var p = proj([longitude,latitude]);
+                    var string = " " + p[0] + " " + p[1];
+                    pointsString = pointsString + string;
+                }
+                // console.log(pointsString)
+
+                return pointsString;
+            })
+            .attr("stroke", "#ffa884")
+            .attr("stroke-width", "1px")
+            .attr("stroke-opacity", ".5")
+            .attr("fill", "transparent")
+            .on("mouseover", function(d) {
+                d3.select(this)
+                    .attr("fill", "#ffa884")
+                    .attr("fill-opacity", ".25");
+
+
+                var x = this.getBBox().x;
+                var y = this.getBBox().y;
+                var h = this.getBBox().height;
+                var w = this.getBBox().width;
+                var center = [(y - 50),(x + (w/2) - 75)]
+
+                var tooltip = d3.select(".map-svg").append("svg")
+                    .attr("class", "tool-tip")
+                    .attr("x", center[1])
+                    .attr("y", center[0]);
+
+                tooltip.append("foreignObject")
+                    .attr("width", "150")
+                    .attr("height", 60)
+                  .append("xhtml:div")
+                    .style("font", "14px 'Helvetica Neue'")
+                    .style("background", "rgba(0, 0, 0, 0.7)")
+                    .style("padding", "0.75em 0.5em")
+                    .style("width", "auto")
+                    .style("text-align", "center")
+                    .style("font-weight", 900)
+                    .html(function() {
+                        return d.key;
+                    });
+
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .attr("fill", "transparent");
+                d3.select(".tool-tip").remove();
+            });
+
+    });
+
+}
+
 
 
 function drawTrees(svg, year, proj) {
