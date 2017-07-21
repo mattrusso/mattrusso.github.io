@@ -380,7 +380,7 @@ function drawCarshareNeighborhood() {
             }
         })
         .key(function(d) {
-            var date = d.Opened.split("/")
+            var date = d.Operational_Date.split("/")
             var last = date.length - 1;
             var date2 = date[last].split(" ")
             var year = parseFloat(date2[0]);
